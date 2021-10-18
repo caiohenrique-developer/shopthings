@@ -6,9 +6,18 @@ export default createGlobalStyle`
   /* Root variables */
   :root {
     /* Colors */
-    --background:#212121;
+    --background:#F0F0F8;
     --white_fff:#ffffff;
-    --black_000:#000000;
+    --gray_727:#72757E;
+    --gray_aca:#ACAEAF;
+    --black_2c3:#2C3144;
+    --purple_424:#424966;
+    --purple_608:#6082C0;
+    --linear_gradient: linear-gradient(
+        0deg,
+        #2C3144 0%,
+        #424966 100%
+      );
 
     /* Fonts */
     --roboto: 'Roboto';
@@ -25,6 +34,8 @@ export default createGlobalStyle`
     padding: 0;
     outline: none;
     box-sizing: border-box;
+
+    color: var(--gray_aca);
 
     font: 1rem var(--roboto), sans-serif;
     -moz-osx-font-smoothing: grayscale;
@@ -61,14 +72,13 @@ export default createGlobalStyle`
       }
 
       &::-webkit-scrollbar-thumb {
-        background: var(--background);
+        background: var(--purple_424);
         border-radius: 5px;
       }
 
       button {
         cursor: pointer;
         background: transparent;
-        font-family: var(--roboto);
       }
 
       [disabled] {
