@@ -1,0 +1,8 @@
+**/*.js
+node_modules
+build
+.next
+next-env.d.ts
+/src/react-app-env.d.ts
+/src/reportWebVitals.ts
+commitlint.config.js
