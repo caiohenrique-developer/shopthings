@@ -35,8 +35,6 @@ export default createGlobalStyle`
     outline: none;
     box-sizing: border-box;
 
-    color: var(--gray_aca);
-
     font: 1rem var(--roboto), sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
