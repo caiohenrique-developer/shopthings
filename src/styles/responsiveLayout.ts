@@ -10,6 +10,18 @@ export const responsiveLayout = css`
       header .app-container nav {
         display: none;
       }
+
+      footer .app-container {
+        nav {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem 0;
+
+          &:first-of-type ul:last-of-type {
+            border: none;
+            padding: 0;
+          }
+        }
+      }
     }
   }
   /* Mobile */
