@@ -16,10 +16,12 @@ export const Container = styled.footer`
       }
 
       ul {
-        padding-bottom: 2rem;
+        padding: 0 2rem 2rem;
 
+        &:first-of-type {
+          padding-left: 0;
+        }
         & + ul {
-          padding-left: 2rem;
           border-left: 1px solid var(--gray_aca);
         }
 

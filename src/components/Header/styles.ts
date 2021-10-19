@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  border: 1px solid var(--gray_aca);
+  border-bottom: 1px solid var(--gray_aca);
 
   .app-container {
     display: flex;
@@ -10,6 +10,7 @@ export const Container = styled.header`
 
     > a {
       width: 4rem;
+      min-width: 2.5rem;
     }
 
     nav ul {
