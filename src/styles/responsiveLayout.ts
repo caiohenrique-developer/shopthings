@@ -56,35 +56,46 @@ export const responsiveLayout = css`
     #__next {
       position: relative;
 
-      header .app-container nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
+      header .app-container {
+        nav {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
 
-        padding-right: 2rem;
-        background: ${opacify(-0.5, '#000')};
+          padding-right: 2rem;
+          background: ${opacify(-0.5, '#000')};
 
-        ul {
-          display: table;
-          height: 100%;
+          ul {
+            display: table;
+            height: 100%;
 
-          padding: 2rem;
-          border-radius: 0 0.5rem 0.5rem 0;
-          background: var(--linear_gradient);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            background: var(--linear_gradient);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
-          li {
-            & + li {
-              margin-top: 1.25rem;
+            li {
+              & + li {
+                margin-top: 1.25rem;
+              }
+
+              a {
+                color: var(--white_fff);
+                font-weight: var(--regular);
+              }
             }
+          }
+        }
 
-            a {
-              color: var(--white_fff);
-              font-weight: var(--regular);
-            }
+        div {
+          align-items: center;
+
+          button:first-of-type {
+            position: relative;
+            z-index: 2;
           }
         }
       }

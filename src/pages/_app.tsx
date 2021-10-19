@@ -7,6 +7,8 @@ import { Header } from '@components/Header';
 
 import GlobalStyles from '@styles/globals';
 
+import 'animate.css';
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

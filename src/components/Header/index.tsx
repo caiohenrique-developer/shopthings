@@ -15,7 +15,7 @@ import { Container } from './styles';
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const { mobile, tablet } = responsiveBreakpoint;
+  const { desktop, tablet, mobile } = responsiveBreakpoint;
 
   return (
     <>
@@ -33,45 +33,94 @@ export const Header = () => {
             </a>
           </Link>
 
-          <nav>
-            <ul>
-              <li>
-                <Link href='#' passHref>
-                  <a>New in</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Furniture</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Rest</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Decoration</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Outdoor</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Magazine</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='#' passHref>
-                  <a>Outlet</a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <MediaQuery minWidth={desktop.breakpoint.min}>
+            <nav>
+              <ul>
+                <li>
+                  <Link href='#' passHref>
+                    <a>New in</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Furniture</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Rest</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Decoration</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Outdoor</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Magazine</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='#' passHref>
+                    <a>Outlet</a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </MediaQuery>
+
+          <MediaQuery
+            minWidth={mobile.breakpoint.min}
+            maxWidth={tablet.breakpoint.max}
+          >
+            {isOpen && (
+              <nav className='animate__animated animate__fadeInLeft'>
+                <ul>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>New in</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Furniture</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Rest</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Decoration</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Outdoor</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Magazine</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#' passHref>
+                      <a>Outlet</a>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            )}
+          </MediaQuery>
 
           <div>
             <button type='button'>
@@ -84,7 +133,7 @@ export const Header = () => {
                   toggle={setOpen}
                   rounded
                   size={20}
-                  color='#4FD1C5'
+                  color={isOpen ? '#ffffff' : '#ACAEAF'}
                   direction='right'
                   label='Show menu mobile'
                 />
@@ -97,7 +146,7 @@ export const Header = () => {
             <button type='button' disabled>
               <FiSearch />
             </button>
-            <button type='button'>
+            <button type='button' disabled={isOpen}>
               <CgShoppingCart />
             </button>
           </div>
