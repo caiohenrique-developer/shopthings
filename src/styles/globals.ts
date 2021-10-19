@@ -20,8 +20,8 @@ export default createGlobalStyle`
       );
 
     /* Fonts */
-    --roboto: 'Roboto';
-    --poppins: 'Poppins';
+    --roboto: 'Roboto'; // 300;400;700
+    --poppins: 'Poppins'; // 600;700
     --light: 300;
     --regular: 400;
     --medium: 600;

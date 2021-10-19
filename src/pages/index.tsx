@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | ShopThings</title>
+        <title>Home | Shopthings</title>
       </Head>
 
       <h1>Home page</h1>

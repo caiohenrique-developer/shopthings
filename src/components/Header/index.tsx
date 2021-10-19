@@ -13,13 +13,17 @@ export const Header = () => {
     <>
       <Container>
         <div className='header-container'>
-          <Image
-            src='/assets/logotipo.png'
-            alt='App logotipo'
-            width={200}
-            height={200}
-            objectFit='cover'
-          />
+          <Link href='/' passHref>
+            <a>
+              <Image
+                src='/assets/logotipo.png'
+                alt='App logotipo'
+                width={200}
+                height={200}
+                objectFit='cover'
+              />
+            </a>
+          </Link>
 
           <nav>
             <ul>
@@ -62,10 +66,10 @@ export const Header = () => {
           </nav>
 
           <div>
-            <button type='button'>
+            <button type='button' disabled>
               <FiUser />
             </button>
-            <button type='button'>
+            <button type='button' disabled>
               <FiSearch />
             </button>
             <button type='button'>
