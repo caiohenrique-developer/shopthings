@@ -85,31 +85,38 @@ export const responsiveLayout = css`
       position: relative;
 
       header .app-container {
+        padding: 0.25rem 1.25rem;
+
+        > a {
+          width: 3rem;
+        }
+
         nav {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-          z-index: 8;
+          z-index: 2;
 
+          height: 100vh;
           padding-right: 2rem;
           background: ${opacify(-0.5, '#000')};
 
           ul {
-            display: table;
-            height: 100%;
+            gap: 1.25rem;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
 
+            height: 100%;
             padding: 2rem;
+            max-width: fit-content;
             border-radius: 0 0.5rem 0.5rem 0;
             background: var(--linear_gradient);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
             li {
-              & + li {
-                margin-top: 1.25rem;
-              }
-
               a {
                 color: var(--white_fff);
                 font-weight: var(--regular);
@@ -122,8 +129,7 @@ export const responsiveLayout = css`
           align-items: center;
 
           button:first-of-type {
-            position: relative;
-            z-index: 9;
+            z-index: 2;
           }
         }
       }

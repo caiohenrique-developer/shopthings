@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 8;
+
+  background: var(--background);
   border-bottom: 1px solid var(--gray_aca);
 
   .app-container {
