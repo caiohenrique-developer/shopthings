@@ -1,3 +1,4 @@
+import { opacify } from 'polished';
 import { css } from 'styled-components';
 
 export const responsiveLayout = css`
@@ -7,10 +8,6 @@ export const responsiveLayout = css`
   /* Tablet */
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     #__next {
-      header .app-container nav {
-        display: none;
-      }
-
       footer .app-container {
         nav {
           grid-template-columns: repeat(3, 1fr);
@@ -27,10 +24,6 @@ export const responsiveLayout = css`
   /* Mobile */
   @media screen and (max-width: 767px) {
     #__next {
-      header .app-container nav {
-        display: none;
-      }
-
       footer {
         padding: 2rem 0;
 
@@ -52,6 +45,45 @@ export const responsiveLayout = css`
               & + ul {
                 border: none;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* Custom Tablet & Mobile */
+  @media screen and (min-width: 300px) and (max-width: 1023px) {
+    #__next {
+      position: relative;
+
+      header .app-container nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        padding-right: 2rem;
+        background: ${opacify(-0.5, '#000')};
+
+        ul {
+          display: table;
+          height: 100%;
+
+          padding: 2rem;
+          border-radius: 0 0.5rem 0.5rem 0;
+          background: var(--linear_gradient);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+          li {
+            & + li {
+              margin-top: 1.25rem;
+            }
+
+            a {
+              color: var(--white_fff);
+              font-weight: var(--regular);
             }
           }
         }
