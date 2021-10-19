@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  gap: 0 2.75rem;
   align-items: center;
+  grid-template-columns: auto 1fr;
 
   padding: 2rem 0;
   transition: 0.4s;
@@ -19,8 +21,6 @@ export const Container = styled.div`
 
   > div {
     &:first-of-type {
-      margin-right: 2.75rem !important;
-
       &,
       > div {
         position: relative;

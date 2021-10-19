@@ -8,6 +8,18 @@ export const responsiveLayout = css`
   /* Tablet */
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     #__next {
+      main.app-container > div {
+        gap: 3rem 1rem;
+        grid-template-columns: 1fr 1fr;
+
+        margin: 4rem 0;
+
+        > div {
+          gap: 0 1.75rem;
+          grid-template-columns: 0.5fr 1fr;
+        }
+      }
+
       footer .app-container {
         nav {
           grid-template-columns: repeat(3, 1fr);
@@ -24,6 +36,22 @@ export const responsiveLayout = css`
   /* Mobile */
   @media screen and (max-width: 767px) {
     #__next {
+      main.app-container > div {
+        gap: 3rem 1rem;
+        grid-template-columns: 1fr;
+
+        margin: 4rem 0;
+
+        > div {
+          gap: 0 1rem;
+          grid-template-columns: 0.4fr 1fr;
+
+          > div:last-of-type button {
+            padding: 0.8rem 0.625rem;
+          }
+        }
+      }
+
       footer {
         padding: 2rem 0;
 
@@ -63,7 +91,7 @@ export const responsiveLayout = css`
           left: 0;
           right: 0;
           bottom: 0;
-          z-index: 1;
+          z-index: 8;
 
           padding-right: 2rem;
           background: ${opacify(-0.5, '#000')};
@@ -95,7 +123,7 @@ export const responsiveLayout = css`
 
           button:first-of-type {
             position: relative;
-            z-index: 2;
+            z-index: 9;
           }
         }
       }
