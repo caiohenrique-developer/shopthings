@@ -2,6 +2,10 @@ import React from 'react';
 
 import Head from 'next/head';
 
+import { Product } from '@components/Product';
+
+import { Container } from '@styles/home';
+
 export default function Home() {
   return (
     <>
@@ -9,7 +13,16 @@ export default function Home() {
         <title>Home | Shopthings</title>
       </Head>
 
-      <h1>Home page</h1>
+      <Container className='app-container'>
+        <div>
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </div>
+      </Container>
     </>
   );
 }
