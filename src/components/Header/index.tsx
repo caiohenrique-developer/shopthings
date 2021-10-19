@@ -1,14 +1,22 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import { CgShoppingCart } from 'react-icons/cg';
 import { FiSearch, FiUser } from 'react-icons/fi';
+import MediaQuery from 'react-responsive';
 
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Sling as Hamburger } from 'hamburger-react';
+
+import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
+
 import { Container } from './styles';
 
 export const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const { mobile, tablet } = responsiveBreakpoint;
+
   return (
     <>
       <Container>
@@ -66,6 +74,23 @@ export const Header = () => {
           </nav>
 
           <div>
+            <button type='button'>
+              <MediaQuery
+                minWidth={mobile.breakpoint.min}
+                maxWidth={tablet.breakpoint.max}
+              >
+                <Hamburger
+                  toggled={isOpen}
+                  toggle={setOpen}
+                  rounded
+                  size={20}
+                  color='#4FD1C5'
+                  direction='right'
+                  label='Show menu mobile'
+                />
+              </MediaQuery>
+            </button>
+
             <button type='button' disabled>
               <FiUser />
             </button>
