@@ -3,14 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.header`
   border: 1px solid var(--gray_aca);
 
-  .header-container {
+  .app-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.25rem;
 
     > a {
       width: 4rem;

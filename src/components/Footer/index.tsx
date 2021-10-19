@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <>
       <Container>
-        <div className='footer-container'>
+        <div className='app-container'>
           <nav>
             <ul>
               <h4>Televisions &#38; Home Theater</h4>
@@ -180,7 +180,7 @@ export const Footer = () => {
           </nav>
 
           <p>
-            Copyright &copy; {year} $hopThings, done with ☕ by:{' '}
+            Copyright &copy; {year} $hopthings, done with ☕ by:{' '}
             <Link
               href='https://github.com/caiohenrique-developer/shopthings'
               passHref

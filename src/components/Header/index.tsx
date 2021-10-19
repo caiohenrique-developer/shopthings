@@ -12,7 +12,7 @@ export const Header = () => {
   return (
     <>
       <Container>
-        <div className='header-container'>
+        <div className='app-container'>
           <Link href='/' passHref>
             <a>
               <Image

@@ -20,8 +20,8 @@ export default createGlobalStyle`
       );
 
     /* Fonts */
-    --roboto: 'Roboto'; // 300;400;700
-    --poppins: 'Poppins'; // 600;700
+    --roboto: 'Roboto'; // fw: 300;400;700
+    --poppins: 'Poppins'; // fw: 600;700
     --light: 300;
     --regular: 400;
     --medium: 600;
@@ -59,6 +59,12 @@ export default createGlobalStyle`
 
     body {
       background: var(--background);
+
+      .app-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
 
       &::-webkit-scrollbar {
         width: 8px;
