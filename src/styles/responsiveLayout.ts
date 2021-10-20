@@ -5,7 +5,7 @@ export const responsiveLayout = css`
   /* Desktop */
   @media screen and (min-width: 1024px) {
     #__next {
-      main.app-container > div:first-of-type {
+      main.app-container > header {
         position: relative;
 
         display: flex;
@@ -39,7 +39,7 @@ export const responsiveLayout = css`
   /* Tablet */
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     #__next {
-      main.app-container > div {
+      main.app-container > section {
         gap: 3rem 1rem;
         grid-template-columns: 1fr 1fr;
 
@@ -67,7 +67,7 @@ export const responsiveLayout = css`
   /* Mobile */
   @media screen and (max-width: 767px) {
     #__next {
-      main.app-container > div {
+      main.app-container > section {
         gap: 3rem 1rem;
         grid-template-columns: 1fr;
 

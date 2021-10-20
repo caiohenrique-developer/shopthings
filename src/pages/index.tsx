@@ -22,8 +22,8 @@ export default function Home() {
       </Head>
 
       <Container className='app-container'>
-        <MediaQuery minWidth={desktop.breakpoint.min}>
-          <div>
+        <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
+          <header>
             <Image
               src={bannerTop}
               alt='Banner top from home page'
@@ -31,17 +31,17 @@ export default function Home() {
               height={534}
               objectFit='cover'
             />
-          </div>
+          </header>
         </MediaQuery>
 
-        <div>
+        <section>
           <Product />
           <Product />
           <Product />
           <Product />
           <Product />
           <Product />
-        </div>
+        </section>
       </Container>
     </>
   );
