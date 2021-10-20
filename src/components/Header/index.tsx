@@ -22,6 +22,8 @@ export const Header = () => {
   return (
     <>
       <Container>
+        <Cart />
+
         <div className='app-container'>
           <Link href='/' passHref>
             <a>
@@ -123,8 +125,6 @@ export const Header = () => {
               </nav>
             )}
           </MediaQuery>
-
-          <Cart />
 
           <div>
             <button type='button'>

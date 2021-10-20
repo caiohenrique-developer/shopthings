@@ -25,7 +25,9 @@ export const Cart = () => {
         </div>
 
         <footer>
-          <button type='button'>Start shopping</button>
+          <button type='button' disabled>
+            Start shopping
+          </button>
         </footer>
       </div>
     </Container>
