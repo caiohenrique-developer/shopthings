@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MediaQuery from 'react-responsive';
 
 import Head from 'next/head';
 import Image from 'next/image';
+
+import { hostEnv } from '@services/api';
 
 import { Product } from '@components/Product';
 
@@ -12,8 +14,37 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
 
+type FetchProductProps = {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  rating: {
+    count: number;
+  };
+};
+
 export default function Home() {
   const { desktop } = responsiveBreakpoint;
+
+  const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async (): Promise<void> => {
+      try {
+        const { data: products } = await hostEnv.get<FetchProductProps[]>(
+          'products',
+        );
+
+        setProductApi(products);
+      } catch (err) {
+        throw new Error(err);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <>
@@ -35,12 +66,15 @@ export default function Home() {
         </MediaQuery>
 
         <section>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {productApi.map(({ id, title, price, description, image }) => (
+            <Product
+              key={id}
+              name={title}
+              price={price}
+              description={description}
+              image={image}
+            />
+          ))}
         </section>
       </Container>
     </>

@@ -4,12 +4,19 @@ import Image from 'next/image';
 
 import { Container } from './styles';
 
-export const Product = () => {
+type ProductProps = {
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+};
+
+export const Product = ({ name, price, description, image }: ProductProps) => {
   return (
     <Container>
       <div>
         <Image
-          src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'
+          src={image}
           alt='Product'
           width={178}
           height={248}
@@ -18,12 +25,9 @@ export const Product = () => {
       </div>
 
       <div>
-        <span>$ 99.99</span>
-        <h2>Arck armchair, pink</h2>
-        <p>
-          Your perfect pack for everyday use and walks in the forest. Stash your
-          laptop (up to 15 inches) in the padded sleeve, your everyday
-        </p>
+        <span>$ {price}</span>
+        <h2>{name}</h2>
+        <p>{description}</p>
         <button type='button'>Buy now</button>
       </div>
     </Container>
