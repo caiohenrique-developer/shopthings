@@ -75,7 +75,8 @@ export const responsiveLayout = css`
 
         > div {
           gap: 0 1rem;
-          grid-template-columns: 0.4fr 1fr;
+          display: flex;
+          justify-content: center;
 
           > div:last-of-type button {
             padding: 0.8rem 0.625rem;
