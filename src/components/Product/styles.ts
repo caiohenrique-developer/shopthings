@@ -70,6 +70,7 @@ export const Container = styled.div`
 
       span {
         color: var(--purple_608);
+        font-family: var(--poppins);
       }
       h2 {
         color: var(--black_2c3);
