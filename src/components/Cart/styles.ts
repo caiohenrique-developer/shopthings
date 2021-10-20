@@ -74,7 +74,23 @@ export const Container = styled.section`
     }
 
     footer {
+      gap: 1rem;
+      display: grid;
+
       width: 100%;
+
+      div {
+        gap: 0.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
 
       button {
         color: var(--white_fff);

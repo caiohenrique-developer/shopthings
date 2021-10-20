@@ -58,6 +58,7 @@ export default createGlobalStyle`
     }
 
     body {
+      color: var(--black_2c3);
       background: var(--background);
 
       .app-container {
