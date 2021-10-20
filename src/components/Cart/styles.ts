@@ -33,6 +33,12 @@ export const Container = styled.section`
         position: absolute;
         top: 2.125rem;
         left: -1.6rem;
+
+        svg {
+          width: 100%;
+          min-width: 3rem;
+          max-width: 3.25rem;
+        }
       }
     }
 
@@ -48,7 +54,7 @@ export const Container = styled.section`
         font-family: var(--poppins);
         color: var(--purple_608);
 
-        margin: 5rem auto 1rem;
+        margin: 2rem auto 1rem;
       }
       p {
         font-size: 0.8rem;

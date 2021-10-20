@@ -51,7 +51,7 @@ export const responsiveLayout = css`
         }
       }
 
-      footer .app-container {
+      > footer .app-container {
         nav {
           grid-template-columns: repeat(3, 1fr);
           gap: 2rem 0;
@@ -84,7 +84,7 @@ export const responsiveLayout = css`
         }
       }
 
-      footer {
+      > footer {
         padding: 2rem 0;
 
         .app-container {
@@ -116,7 +116,7 @@ export const responsiveLayout = css`
     #__next {
       position: relative;
 
-      header .app-container {
+      > header .app-container {
         padding: 0.25rem 1.25rem;
 
         > a {

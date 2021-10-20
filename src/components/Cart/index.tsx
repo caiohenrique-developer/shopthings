@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Player } from '@lottiefiles/react-lottie-player';
+
 import CloseIconSVG from '@assets/close-icon.svg';
-import EmptyCartSVG from '@assets/empty-cart.svg';
 
 import { Container } from './styles';
 
@@ -16,7 +17,12 @@ export const Cart = () => {
         </header>
 
         <div>
-          <EmptyCartSVG />
+          <Player
+            loop
+            autoplay
+            style={{ width: '21.875rem', height: '14.875rem' }}
+            src='https://assets7.lottiefiles.com/datafiles/vhvOcuUkH41HdrL/data.json'
+          />
           <h3>Your bag is empty</h3>
           <p>
             Looks like you haven’t added any items to the bag yet. Start
