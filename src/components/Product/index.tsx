@@ -20,7 +20,7 @@ export const Product = ({ name, price, description, image }: ProductProps) => {
           alt='Product'
           width={178}
           height={248}
-          objectFit='cover'
+          objectFit='contain'
         />
       </div>
 

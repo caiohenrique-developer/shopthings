@@ -12,19 +12,32 @@ export const Container = styled.div`
   &:hover {
     background: var(--white_fff);
 
-    > div:last-of-type button {
-      color: var(--white_fff);
-      background: var(--black_2c3);
-      border-color: var(--black_2c3);
+    > div {
+      &:first-of-type:after {
+        content: none;
+      }
+      &:last-of-type button {
+        color: var(--white_fff);
+        background: var(--black_2c3);
+        border-color: var(--black_2c3);
+      }
     }
   }
 
   > div {
     &:first-of-type {
+      background: var(--white_fff);
+
       &,
       > div {
         position: relative;
+      }
+      > div {
         z-index: 1;
+
+        img {
+          padding: 1.25rem !important;
+        }
       }
 
       &:after {
@@ -33,6 +46,7 @@ export const Container = styled.div`
         position: absolute;
         left: 50%;
         bottom: -1.25rem;
+        z-index: -1;
         transform: translateX(-50%);
 
         display: block;
