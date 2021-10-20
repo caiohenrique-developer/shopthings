@@ -39,6 +39,7 @@ export const Container = styled.div`
         width: 80%;
         height: 2rem;
 
+        opacity: 0.6;
         filter: blur(20px);
         border-radius: 50%;
         background: var(--gray_727);
