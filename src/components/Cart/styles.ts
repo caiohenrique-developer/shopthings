@@ -23,14 +23,24 @@ export const Container = styled.section`
     flex-direction: column;
     justify-content: space-between;
 
+    width: 100%;
     max-width: 25rem;
     padding: 1.563rem;
     background: var(--white_fff);
     box-shadow: 0 0 1rem rgb(255 255 255 / 10%);
 
     header {
+      span,
       button {
         position: absolute;
+      }
+
+      span {
+        top: 3.2rem;
+        left: 3rem;
+      }
+
+      button {
         top: 2.125rem;
         left: -1.6rem;
 
