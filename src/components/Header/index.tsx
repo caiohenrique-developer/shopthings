@@ -8,6 +8,8 @@ import Link from 'next/link';
 
 import { Sling as Hamburger } from 'hamburger-react';
 
+import { Cart } from '@components/Cart';
+
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import { Container } from './styles';
@@ -121,6 +123,8 @@ export const Header = () => {
               </nav>
             )}
           </MediaQuery>
+
+          <Cart />
 
           <div>
             <button type='button'>
