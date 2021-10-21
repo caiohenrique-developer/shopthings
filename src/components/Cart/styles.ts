@@ -43,6 +43,14 @@ export const Container = styled.section`
           width: 100%;
           min-width: 3rem;
           max-width: 3.25rem;
+
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+
+        &:hover svg {
+          padding: 0.4rem;
+          background: ${opacify(-0.5, 'rgb(96, 130, 192)')};
         }
       }
     }
