@@ -91,13 +91,13 @@ export const Cart = () => {
           {tst && (
             <div>
               <span>
-                Shipping &#38; Handling: <strong>$ 0.00</strong>
+                Shipping &#38; Handling: <strong>$0.00</strong>
               </span>
               <span>
-                Discount: <strong>$ 0.00</strong>
+                Discount: <strong>$0.00</strong>
               </span>
               <span>
-                Grand total: <strong>$ 0.00</strong>
+                Grand total: <strong>$0.00</strong>
               </span>
             </div>
           )}

@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import CloseIconSVG from '@assets/close-icon.svg';
 
+import { formattedCurrency } from '@utils/formatCurrency';
+
 import { Container } from './styles';
 
 type ProductCartProps = {
@@ -37,7 +39,7 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
       </div>
 
       <div>
-        <span>$ {price}</span>
+        <span>{formattedCurrency(price)}</span>
         <h2>{name}</h2>
         <div>
           <button
