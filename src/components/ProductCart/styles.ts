@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   grid-template-columns: 0.5fr 1fr;
 
-  width: 100%;
+  padding: 0.2rem;
   transition: 0.3s;
 
   &:hover {

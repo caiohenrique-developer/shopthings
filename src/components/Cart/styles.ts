@@ -18,7 +18,7 @@ export const Container = styled.section`
   > div {
     position: relative;
 
-    gap: 2rem;
+    gap: 0.8rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -57,15 +57,13 @@ export const Container = styled.section`
 
     > div {
       gap: 0.5rem;
-      display: flex;
+      display: grid;
       align-items: center;
-      flex-direction: column;
       justify-content: center;
 
       overflow-y: auto;
       margin-right: 1rem;
-      padding-left: 1.563rem;
-      padding-right: 0.563rem;
+      padding: 0.5rem 0.563rem 0.5rem 1.563rem;
 
       &::-webkit-scrollbar {
         width: 8px;
