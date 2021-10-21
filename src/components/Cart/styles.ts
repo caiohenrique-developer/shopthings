@@ -26,7 +26,6 @@ export const Container = styled.section`
 
     width: 100%;
     max-width: 25rem;
-    padding: 1.563rem;
     background: var(--white_fff);
     box-shadow: 0 0 1rem rgb(255 255 255 / 10%);
 
@@ -35,6 +34,7 @@ export const Container = styled.section`
       align-items: center;
 
       width: 100%;
+      padding: 1.563rem 1.563rem 0;
 
       button {
         margin: 0 1.5rem 0 -3.2rem;
@@ -48,12 +48,16 @@ export const Container = styled.section`
     }
 
     > div {
+      gap: 0.5rem;
       display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: center;
 
       overflow-y: auto;
+      margin-right: 1rem;
+      padding-left: 1.563rem;
+      padding-right: 0.563rem;
 
       &::-webkit-scrollbar {
         width: 8px;
@@ -89,6 +93,7 @@ export const Container = styled.section`
       display: grid;
 
       width: 100%;
+      padding: 0 1.563rem 1.563rem;
 
       div {
         gap: 0.2rem;

@@ -26,7 +26,6 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
       <div>
         <span>$ {price}</span>
         <h2>{name}</h2>
-        <button type='button'>Buy now</button>
       </div>
     </Container>
   );
