@@ -15,6 +15,14 @@ type ProductCartProps = {
 export const ProductCart = ({ name, price, image }: ProductCartProps) => {
   const [quantity, setQuantity] = useState(1);
 
+  const handleQuantity = (buttonID: string) => {
+    if (quantity > 0 && buttonID === 'increase') {
+      setQuantity(quantity + 1);
+    } else if (quantity > 1 && buttonID === 'decrease') {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
     <Container>
       <div>
@@ -31,11 +39,11 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
         <span>$ {price}</span>
         <h2>{name}</h2>
         <div>
-          <button type='button' onClick={() => setQuantity(quantity + 1)}>
+          <button type='button' onClick={() => handleQuantity('decrease')}>
             -
           </button>
           <input type='number' maxLength={2} value={quantity} />
-          <button type='button' onClick={() => setQuantity(quantity - 1)}>
+          <button type='button' onClick={() => handleQuantity('increase')}>
             +
           </button>
         </div>
