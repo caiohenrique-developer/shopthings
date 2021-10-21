@@ -4,18 +4,22 @@ import { Player } from '@lottiefiles/react-lottie-player';
 
 import { ProductCart } from '@components/ProductCart';
 
+import { useCartOpen } from '@hooks/useCartOpen';
+
 import CloseIconSVG from '@assets/close-icon.svg';
 
 import { Container } from './styles';
 
 export const Cart = () => {
+  const { setCartOpen } = useCartOpen();
+
   const tst = true;
 
   return (
     <Container className='animate__animated animate__fadeInRightBig'>
       <div>
         <header>
-          <button type='button'>
+          <button type='button' onClick={() => setCartOpen(false)}>
             <CloseIconSVG />
           </button>
 

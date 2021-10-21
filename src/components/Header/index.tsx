@@ -10,15 +10,18 @@ import { Sling as Hamburger } from 'hamburger-react';
 
 import { Cart } from '@components/Cart';
 
+import { useCartOpen } from '@hooks/useCartOpen';
+
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import { Container } from './styles';
 
 export const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isCartOpen, setCartOpen] = useState(false);
-
   const { desktop, tablet, mobile } = responsiveBreakpoint;
+
+  const { isCartOpen, setCartOpen } = useCartOpen();
+
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
