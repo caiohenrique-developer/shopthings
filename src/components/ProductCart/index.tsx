@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
 import Image from 'next/image';
 
@@ -40,11 +41,11 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
         <h2>{name}</h2>
         <div>
           <button type='button' onClick={() => handleQuantity('decrease')}>
-            -
+            <BsChevronCompactLeft />
           </button>
           <input type='number' maxLength={2} value={quantity} />
           <button type='button' onClick={() => handleQuantity('increase')}>
-            +
+            <BsChevronCompactRight />
           </button>
         </div>
       </div>
