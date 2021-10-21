@@ -12,7 +12,7 @@ export const Cart = () => {
   const tst = true;
 
   return (
-    <Container>
+    <Container className='animate__animated animate__fadeInRightBig'>
       <div>
         <header>
           <button type='button'>

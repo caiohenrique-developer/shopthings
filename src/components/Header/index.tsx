@@ -15,14 +15,15 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 import { Container } from './styles';
 
 export const Header = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
 
   const { desktop, tablet, mobile } = responsiveBreakpoint;
 
   return (
     <>
       <Container>
-        <Cart />
+        {isCartOpen && <Cart />}
 
         <div className='app-container'>
           <Link href='/' passHref>
@@ -83,7 +84,7 @@ export const Header = () => {
             minDeviceWidth={mobile.breakpoint.min}
             maxDeviceWidth={tablet.breakpoint.max}
           >
-            {isOpen && (
+            {isMenuOpen && (
               <nav className='animate__animated animate__fadeInLeft'>
                 <ul>
                   <li>
@@ -127,17 +128,17 @@ export const Header = () => {
           </MediaQuery>
 
           <div>
-            <button type='button'>
+            <button type='button' disabled={isCartOpen}>
               <MediaQuery
                 minDeviceWidth={mobile.breakpoint.min}
                 maxDeviceWidth={tablet.breakpoint.max}
               >
                 <Hamburger
-                  toggled={isOpen}
-                  toggle={setOpen}
+                  toggled={isMenuOpen}
+                  toggle={setMenuOpen}
                   rounded
                   size={20}
-                  color={isOpen ? '#ffffff' : '#ACAEAF'}
+                  color={isMenuOpen ? '#ffffff' : '#ACAEAF'}
                   direction='right'
                   label='Show menu mobile'
                 />
@@ -150,7 +151,11 @@ export const Header = () => {
             <button type='button' disabled>
               <FiSearch />
             </button>
-            <button type='button' disabled={isOpen}>
+            <button
+              type='button'
+              disabled={isMenuOpen}
+              onClick={() => setCartOpen(true)}
+            >
               <CgShoppingCart />
             </button>
           </div>
