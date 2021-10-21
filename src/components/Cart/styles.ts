@@ -18,6 +18,7 @@ export const Container = styled.section`
   > div {
     position: relative;
 
+    gap: 2rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -30,19 +31,13 @@ export const Container = styled.section`
     box-shadow: 0 0 1rem rgb(255 255 255 / 10%);
 
     header {
-      span,
-      button {
-        position: absolute;
-      }
+      display: flex;
+      align-items: center;
 
-      span {
-        top: 3.2rem;
-        left: 3rem;
-      }
+      width: 100%;
 
       button {
-        top: 2.125rem;
-        left: -1.6rem;
+        margin: 0 1.5rem 0 -3.2rem;
 
         svg {
           width: 100%;
@@ -57,6 +52,22 @@ export const Container = styled.section`
       align-items: center;
       flex-direction: column;
       justify-content: center;
+
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 0;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--purple_424);
+        border-radius: 5px;
+      }
 
       h3 {
         font-size: 1.5rem;

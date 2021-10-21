@@ -4,22 +4,21 @@ import Image from 'next/image';
 
 import { Container } from './styles';
 
-type ProductProps = {
+type ProductCartProps = {
   name: string;
   price: number;
-  description: string;
   image: string;
 };
 
-export const Product = ({ name, price, description, image }: ProductProps) => {
+export const ProductCart = ({ name, price, image }: ProductCartProps) => {
   return (
     <Container>
       <div>
         <Image
           src={image}
           alt={name}
-          width={178}
-          height={248}
+          width={140}
+          height={200}
           objectFit='contain'
         />
       </div>
@@ -27,7 +26,6 @@ export const Product = ({ name, price, description, image }: ProductProps) => {
       <div>
         <span>$ {price}</span>
         <h2>{name}</h2>
-        <p>{description}</p>
         <button type='button'>Buy now</button>
       </div>
     </Container>

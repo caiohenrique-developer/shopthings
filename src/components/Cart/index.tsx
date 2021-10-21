@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Player } from '@lottiefiles/react-lottie-player';
 
-import { Product } from '@components/Product';
+import { hostEnv } from '@services/api';
+
+import { ProductCart } from '@components/ProductCart';
 
 import CloseIconSVG from '@assets/close-icon.svg';
 
 import { Container } from './styles';
 
+type FetchProductProps = {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+  rating: {
+    count: number;
+  };
+};
+
 export const Cart = () => {
   const tst = true;
+
+  const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async (): Promise<void> => {
+      try {
+        const { data: products } = await hostEnv.get<FetchProductProps[]>(
+          'products',
+        );
+
+        setProductApi(products);
+      } catch (err) {
+        throw new Error(err);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <Container>
@@ -42,13 +73,16 @@ export const Cart = () => {
               </p>
             </>
           ) : (
-            <Product
-              key='id'
-              name='title'
-              price={88888}
-              description='description'
-              image='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg'
-            />
+            <>
+              {productApi.map(({ id, title, price, description, image }) => (
+                <ProductCart
+                  key={id}
+                  name={title}
+                  price={price}
+                  image={image}
+                />
+              ))}
+            </>
           )}
         </div>
 
