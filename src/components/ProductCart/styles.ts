@@ -23,7 +23,7 @@ export const Container = styled.div`
     }
   }
 
-  button {
+  > button {
     position: absolute;
     z-index: 1;
     top: 0.2rem;
