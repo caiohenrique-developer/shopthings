@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Player } from '@lottiefiles/react-lottie-player';
-
-import { hostEnv } from '@services/api';
 
 import { ProductCart } from '@components/ProductCart';
 
@@ -10,37 +8,8 @@ import CloseIconSVG from '@assets/close-icon.svg';
 
 import { Container } from './styles';
 
-type FetchProductProps = {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  description: string;
-  image: string;
-  rating: {
-    count: number;
-  };
-};
-
 export const Cart = () => {
   const tst = true;
-
-  const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
-
-  useEffect(() => {
-    const fetchProducts = async (): Promise<void> => {
-      try {
-        const { data: products } = await hostEnv.get<FetchProductProps[]>(
-          'products',
-        );
-
-        setProductApi(products);
-      } catch (err) {
-        throw new Error(err);
-      }
-    };
-    fetchProducts();
-  }, []);
 
   return (
     <Container>
@@ -74,14 +43,42 @@ export const Cart = () => {
             </>
           ) : (
             <>
-              {productApi.map(({ id, title, price, description, image }) => (
-                <ProductCart
-                  key={id}
-                  name={title}
-                  price={price}
-                  image={image}
-                />
-              ))}
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
+              <ProductCart
+                key={2}
+                name='Mens Casual Premium Slim Fit T-Shirts'
+                price={22.3}
+                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+              />
             </>
           )}
         </div>
