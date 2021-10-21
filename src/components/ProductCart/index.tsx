@@ -28,6 +28,11 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
       <div>
         <span>$ {price}</span>
         <h2>{name}</h2>
+        <div>
+          <button type='button'>-</button>
+          <input type='number' maxLength={2} value='1' />
+          <button type='button'>+</button>
+        </div>
       </div>
 
       <button type='button'>
