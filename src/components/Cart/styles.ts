@@ -116,6 +116,15 @@ export const Container = styled.section`
         width: 100%;
         padding: 1rem 0;
         background: var(--purple_608);
+        transition: 0.2s;
+
+        &.active {
+          background: var(--black_2c3);
+        }
+        &:hover {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
       }
     }
   }

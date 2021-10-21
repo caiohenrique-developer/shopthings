@@ -101,8 +101,8 @@ export const Cart = () => {
             </div>
           )}
 
-          <button type='button' disabled>
-            Start shopping
+          <button type='button' className={tst && 'active'}>
+            {!tst ? 'Start shopping' : 'Go to checkout'}
           </button>
         </footer>
       </div>
