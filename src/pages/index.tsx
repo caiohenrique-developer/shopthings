@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import Head from 'next/head';
@@ -13,6 +14,7 @@ import { Container } from '@styles/home';
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
+import { resultCalc } from '../store/selectors/Calculator';
 
 type FetchProductProps = {
   id: number;
@@ -28,6 +30,8 @@ type FetchProductProps = {
 
 export default function Home() {
   const { desktop } = responsiveBreakpoint;
+
+  const result = useSelector(resultCalc);
 
   const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
 
@@ -64,6 +68,8 @@ export default function Home() {
             />
           </header>
         </MediaQuery>
+
+        <strong>Resultado: {result}</strong>
 
         <section>
           {productApi.map(({ id, title, price, description, image }) => (
