@@ -14,7 +14,7 @@ import { Container } from '@styles/home';
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
-import { sum, subtract } from '../store/actions/Calculator';
+import { sum, sub } from '../store/actions/Calculator';
 import { resultCalc } from '../store/selectors/Calculator';
 
 type FetchProductProps = {
@@ -98,7 +98,7 @@ export default function Home() {
         <button
           type='button'
           onClick={() => {
-            dispatch(subtract(a, b));
+            dispatch(sub(a, b));
           }}
         >
           subtrair

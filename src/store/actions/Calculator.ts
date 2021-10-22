@@ -1,13 +1,17 @@
+import { ActionTypes } from './types';
+
+const { SUM, SUB } = ActionTypes;
+
 export const sum = (a: number, b: number) => {
   return {
-    type: 'SUM',
+    type: SUM,
     payload: [a, b],
   };
 };
 
-export const subtract = (a: number, b: number) => {
+export const sub = (a: number, b: number) => {
   return {
-    type: 'SUBTRACT',
+    type: SUB,
     payload: [a, b],
   };
 };
