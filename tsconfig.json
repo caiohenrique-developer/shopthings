@@ -9,6 +9,7 @@
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@services/*": ["services/*"],
+      "@store/*": ["store/*"],
       "@api/*": ["pages/api/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
