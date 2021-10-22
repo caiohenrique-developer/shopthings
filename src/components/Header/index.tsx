@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { CgShoppingCart } from 'react-icons/cg';
 import { FiSearch, FiUser } from 'react-icons/fi';
-import { useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import Image from 'next/image';
@@ -15,13 +14,10 @@ import { useCartOpen } from '@hooks/useCartOpen';
 
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
-import { resultCalc } from '../../store/selectors/Calculator';
 import { Container } from './styles';
 
 export const Header = () => {
   const { desktop, tablet, mobile } = responsiveBreakpoint;
-
-  const result = useSelector(resultCalc);
 
   const { isCartOpen, setCartOpen } = useCartOpen();
 
@@ -44,8 +40,6 @@ export const Header = () => {
               />
             </a>
           </Link>
-
-          <strong>Resultado do Redux: {result}</strong>
 
           <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
             <nav>
