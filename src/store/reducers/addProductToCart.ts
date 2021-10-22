@@ -1,11 +1,7 @@
 import { Reducer } from 'react';
 
 import { ActionTypes } from '../actions/types';
-
-type ActionProps = {
-  type: string;
-  payload: number;
-};
+import { ActionProps } from './types';
 
 const { ADD_PRODUCT_TO_CART } = ActionTypes;
 
