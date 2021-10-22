@@ -14,6 +14,7 @@ import { Container } from '@styles/home';
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
+import { sum, subtract } from '../store/actions/Calculator';
 import { resultCalc } from '../store/selectors/Calculator';
 
 type FetchProductProps = {
@@ -29,11 +30,15 @@ type FetchProductProps = {
 };
 
 export default function Home() {
-  const { desktop } = responsiveBreakpoint;
-
   const result = useSelector(resultCalc);
 
+  const dispatch = useDispatch();
+
   const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+
+  const { desktop } = responsiveBreakpoint;
 
   useEffect(() => {
     const fetchProducts = async (): Promise<void> => {
@@ -68,6 +73,36 @@ export default function Home() {
             />
           </header>
         </MediaQuery>
+
+        <input
+          type='number'
+          placeholder='a'
+          value={a}
+          onChange={(e) => setA(Number(e.target.value))}
+        />
+        <input
+          type='number'
+          placeholder='b'
+          value={b}
+          onChange={(e) => setB(Number(e.target.value))}
+        />
+        <button
+          type='button'
+          onClick={() => {
+            dispatch(sum(a, b));
+          }}
+        >
+          somar
+        </button>
+
+        <button
+          type='button'
+          onClick={() => {
+            dispatch(subtract(a, b));
+          }}
+        >
+          subtrair
+        </button>
 
         <strong>Resultado: {result}</strong>
 
