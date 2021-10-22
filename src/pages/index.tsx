@@ -15,6 +15,7 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
 import { sum, sub } from '../store/actions/Calculator';
+import { addProductToCartSelector } from '../store/selectors/addProductToCart';
 import { resultCalc } from '../store/selectors/Calculator';
 
 type FetchProductProps = {
@@ -30,7 +31,8 @@ type FetchProductProps = {
 };
 
 export default function Home() {
-  const result = useSelector(resultCalc);
+  const results = useSelector(resultCalc);
+  const addProduct = useSelector(addProductToCartSelector);
 
   const dispatch = useDispatch();
 
@@ -62,6 +64,9 @@ export default function Home() {
       </Head>
 
       <Container className='app-container'>
+        <strong>Resultado: {results}</strong>
+        <strong>Preço do produto: {addProduct}</strong>
+
         <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
           <header>
             <Image
@@ -103,8 +108,6 @@ export default function Home() {
         >
           subtrair
         </button>
-
-        <strong>Resultado: {result}</strong>
 
         <section>
           {productApi.map(({ id, title, price, description, image }) => (
