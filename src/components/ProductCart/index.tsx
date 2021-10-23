@@ -12,7 +12,7 @@ import { Container } from './styles';
 type ProductCartProps = {
   name: string;
   price: number;
-  image: string;
+  image: string | StaticImageData;
 };
 
 export const ProductCart = ({ name, price, image }: ProductCartProps) => {

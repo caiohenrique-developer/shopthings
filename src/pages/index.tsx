@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import Head from 'next/head';
@@ -14,7 +13,6 @@ import { Container } from '@styles/home';
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import bannerTop from '../../public/assets/home-banner-top.png';
-import { addProductToCartSelector } from '../store/selectors/addProductToCart';
 
 type FetchProductProps = {
   id: number;
@@ -29,8 +27,6 @@ type FetchProductProps = {
 };
 
 export default function Home() {
-  const addProduct = useSelector(addProductToCartSelector);
-
   const [productApi, setProductApi] = useState<FetchProductProps[]>([]);
 
   const { desktop } = responsiveBreakpoint;
@@ -57,8 +53,6 @@ export default function Home() {
       </Head>
 
       <Container className='app-container'>
-        <strong>Valor dos produtos: {addProduct}</strong>
-
         <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
           <header>
             <Image

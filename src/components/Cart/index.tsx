@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { Player } from '@lottiefiles/react-lottie-player';
+
+import { addProductToCartSelector } from '@store/selectors/addProductToCart';
 
 import { ProductCart } from '@components/ProductCart';
 
@@ -8,10 +11,13 @@ import { useCartOpen } from '@hooks/useCartOpen';
 
 import CloseIconSVG from '@assets/close-icon.svg';
 
+import placeholder from '../../assets/product-placeholder.png';
 import { Container } from './styles';
 
 export const Cart = () => {
   const { setCartOpen } = useCartOpen();
+  const selectedProduct = useSelector(addProductToCartSelector);
+  const { name, price, image } = selectedProduct;
 
   const tst = true;
 
@@ -49,39 +55,51 @@ export const Cart = () => {
             <>
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
               <ProductCart
                 key={2}
-                name='Mens Casual Premium Slim Fit T-Shirts'
-                price={22.3}
-                image='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
+              />
+              <ProductCart
+                key={2}
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
+              />
+              <ProductCart
+                key={2}
+                name={name}
+                price={price}
+                image={image === '/' ? placeholder : image}
               />
             </>
           )}

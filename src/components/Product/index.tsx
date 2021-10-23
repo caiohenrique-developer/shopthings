@@ -18,6 +18,8 @@ type ProductProps = {
 export const Product = ({ name, price, description, image }: ProductProps) => {
   const dispatch = useDispatch();
 
+  const selectedProduct = { name, price, image };
+
   return (
     <Container>
       <div>
@@ -36,7 +38,7 @@ export const Product = ({ name, price, description, image }: ProductProps) => {
         <p>{description}</p>
         <button
           type='button'
-          onClick={() => dispatch(addProductToCartAction(price))}
+          onClick={() => dispatch(addProductToCartAction(selectedProduct))}
         >
           Buy now
         </button>

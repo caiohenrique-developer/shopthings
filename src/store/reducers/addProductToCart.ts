@@ -1,16 +1,20 @@
 import { Reducer } from 'react';
 
-import { ActionTypes } from '../actions/types';
+import { ActionTypes, SelectedProduct } from '../actions/types';
 import { ActionProps } from './types';
 
 const { ADD_PRODUCT_TO_CART } = ActionTypes;
 
-const initialState = 0;
+const initialState = {
+  name: 'Undefined',
+  price: 0.01,
+  image: '/',
+};
 
-export const addProductToCartReducer: Reducer<number, ActionProps> = (
+export const addProductToCartReducer: Reducer<SelectedProduct, ActionProps> = (
   state = initialState,
   action: ActionProps,
-): number => {
+): SelectedProduct => {
   switch (action.type) {
     case ADD_PRODUCT_TO_CART:
       return action.payload;
