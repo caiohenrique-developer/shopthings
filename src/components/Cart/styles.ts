@@ -56,14 +56,20 @@ export const Container = styled.section`
     }
 
     > div {
-      gap: 0.5rem;
-      display: grid;
+      display: flex;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
 
       overflow-y: auto;
       margin-right: 1rem;
       padding: 0.5rem 0.563rem 0.5rem 1.563rem;
+
+      &.active {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
 
       &::-webkit-scrollbar {
         width: 8px;
@@ -84,6 +90,7 @@ export const Container = styled.section`
         font-weight: var(--medium);
         font-family: var(--poppins);
         color: var(--purple_608);
+        text-align: center;
 
         margin: 2rem auto 1rem;
       }

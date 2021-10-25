@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { CgShoppingCart } from 'react-icons/cg';
 import { FiSearch, FiUser } from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Tooltip } from '@mui/material';
 import { Sling as Hamburger } from 'hamburger-react';
+
+import { productCartManagerSelector } from '@store/selectors/productCartManager';
 
 import { Cart } from '@components/Cart';
 
@@ -17,11 +21,12 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 import { Container } from './styles';
 
 export const Header = () => {
-  const { desktop, tablet, mobile } = responsiveBreakpoint;
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const { isCartOpen, setCartOpen } = useCartOpen();
+  const productList = useSelector(productCartManagerSelector);
 
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const { desktop, tablet, mobile } = responsiveBreakpoint;
 
   return (
     <>
@@ -147,20 +152,35 @@ export const Header = () => {
                 />
               </MediaQuery>
             </button>
-
             <button type='button' disabled>
               <FiUser />
             </button>
             <button type='button' disabled>
               <FiSearch />
             </button>
-            <button
-              type='button'
-              disabled={isMenuOpen}
-              onClick={() => setCartOpen(true)}
+            <Tooltip
+              title={
+                productList.length > 0
+                  ? 'Product cart quantity'
+                  : 'Your bag is empty'
+              }
+              arrow
             >
-              <CgShoppingCart />
-            </button>
+              <button
+                type='button'
+                disabled={isMenuOpen}
+                onClick={() => setCartOpen(true)}
+                className={
+                  productList.length > 0 &&
+                  'animate__animated animate__bounceIn'
+                }
+              >
+                <CgShoppingCart
+                  className={productList.length > 0 && 'active'}
+                />
+                {productList.length > 0 && <span>{productList.length}</span>}
+              </button>
+            </Tooltip>
           </div>
         </div>
       </Container>

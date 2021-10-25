@@ -42,9 +42,24 @@ export const Container = styled.header`
       display: flex;
       gap: 2rem;
 
-      button svg {
-        font-size: 1.4rem;
-        color: var(--gray_aca);
+      button {
+        svg {
+          font-size: 1.4rem;
+          color: var(--gray_aca);
+          &.active {
+            color: var(--purple_608);
+          }
+        }
+        &:last-of-type {
+          position: relative;
+          span {
+            position: absolute;
+            color: var(--white_fff);
+            border-radius: 2rem;
+            background: var(--purple_424);
+            padding: 0.25rem 0.5rem;
+          }
+        }
       }
     }
   }
