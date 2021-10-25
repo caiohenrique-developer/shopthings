@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -16,5 +17,5 @@ const persistentState = persistReducer(
   rootReducer,
 );
 
-export const store = createStore(persistentState);
+export const store = createStore(persistentState, composeWithDevTools());
 export const persistentStore = persistStore(store);

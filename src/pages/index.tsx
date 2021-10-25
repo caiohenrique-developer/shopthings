@@ -38,13 +38,36 @@ export default function Home() {
           'products',
         );
 
+        // products.forEach(
+        //   ({ id, title, price, image, category, description, rating }) => {
+        //     const product = {
+        //       id,
+        //       title,
+        //       price,
+        //       image,
+        //       category,
+        //       description,
+        //       rating: { count: rating.count },
+        //       quantity: 1,
+        //     };
+
+        //     // setProductApi([product]);
+        //   },
+        // );
+
         setProductApi(products);
       } catch (err) {
         throw new Error(err);
       }
     };
     fetchProducts();
-  }, []);
+
+    // console.table(productApi);
+
+    // productApi.forEach((product) => {
+    //   console.table({ ...product, quantity: 1 });
+    // });
+  }, [productApi]);
 
   return (
     <>

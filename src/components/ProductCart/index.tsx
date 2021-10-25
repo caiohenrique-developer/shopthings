@@ -71,7 +71,7 @@ export const ProductCart = ({
 
       <button
         type='button'
-        onClick={() => dispatch(productCartManager(removeProduct))}
+        onClick={() => dispatch(productCartManager(productID))}
       >
         <CloseIconSVG />
       </button>

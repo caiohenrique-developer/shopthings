@@ -9,5 +9,10 @@ export type SelectedProduct = {
   image: string | StaticImageData;
   name: string;
   price: number;
-  selected: boolean;
+  quantity: number;
+  category: string;
+  description: string;
+  rating: {
+    count: number;
+  };
 };

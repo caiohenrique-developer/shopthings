@@ -19,7 +19,20 @@ export const Product = ({
 }: ProductProps) => {
   const dispatch = useDispatch();
 
-  const addProduct = { productID, name, price, image, selected: true };
+  const addProduct = {
+    productID,
+    name,
+    price,
+    category: 'string',
+    description: 'string',
+    image,
+    quantity: 1,
+    rating: {
+      count: 8,
+    },
+  };
+
+  // dispatch(productCartManager(addProduct));
 
   return (
     <Container>

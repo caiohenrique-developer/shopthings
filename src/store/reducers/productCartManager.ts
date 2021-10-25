@@ -19,10 +19,10 @@ export const productCartManagerReducer: Reducer<
         break;
 
       case REMOVE_PRODUCT_CART:
-        draft.map(
+        draft.forEach(
           ({ productID }) =>
             productID &&
-            productID === action.payload.productID &&
+            productID === action.payload &&
             draft.splice(draft.indexOf(action.payload), 1),
         );
         break;
