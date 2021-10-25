@@ -4,7 +4,8 @@ import { ActionTypes } from '@store/actions/types';
 
 import { ProductCartManagerActionProps } from './types';
 
-const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART } = ActionTypes;
+const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART, PRODUCT_CART_QUANTITY } =
+  ActionTypes;
 
 export const productCartManagerReducer = (
   state = [],
@@ -12,11 +13,12 @@ export const productCartManagerReducer = (
 ) => {
   return produce(state, (draft) => {
     switch (action.type) {
-      case ADD_PRODUCT_CART:
+      case ADD_PRODUCT_CART: {
         draft.push(action.payload);
         break;
+      }
 
-      case REMOVE_PRODUCT_CART:
+      case REMOVE_PRODUCT_CART: {
         draft.forEach(
           ({ productID }) =>
             productID &&
@@ -24,6 +26,17 @@ export const productCartManagerReducer = (
             draft.splice(draft.indexOf(action.payload), 1),
         );
         break;
+      }
+
+      case PRODUCT_CART_QUANTITY: {
+        const product = draft.filter(
+          ({ productID }) => productID && productID === action.payload[0],
+        )[0];
+
+        // eslint-disable-next-line prefer-destructuring
+        product.quantity = action.payload[1];
+        break;
+      }
 
       default:
         return draft;

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Image from 'next/image';
 
-import { productCartManager } from '@store/actions/productCartManager';
+import {
+  productCartManager,
+  productCartQuantityAction,
+} from '@store/actions/productCartManager';
+import { productCartManagerSelector } from '@store/selectors/productCartManager';
 
 import CloseIconSVG from '@assets/close-icon.svg';
 
@@ -21,13 +25,20 @@ export const ProductCart = ({
 }: ProductCartProps) => {
   const [quantity, setQuantity] = useState(1);
 
+  const productList = useSelector(productCartManagerSelector);
+  console.table(productList);
+
   const dispatch = useDispatch();
 
   const handleQuantity = (buttonID: string) => {
     if (quantity > 0 && buttonID === 'increase') {
       setQuantity(quantity + 1);
+
+      dispatch(productCartQuantityAction(productID, quantity + 1));
     } else if (quantity > 1 && buttonID === 'decrease') {
       setQuantity(quantity - 1);
+
+      dispatch(productCartQuantityAction(productID, quantity - 1));
     }
   };
 

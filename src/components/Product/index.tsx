@@ -24,9 +24,9 @@ export const Product = ({
     productID,
     name,
     price,
+    image,
     category,
     description,
-    image,
     quantity: 1,
   };
 

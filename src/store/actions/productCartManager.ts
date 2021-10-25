@@ -1,6 +1,7 @@
 import { ActionTypes, SelectedProduct } from './types';
 
-const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART } = ActionTypes;
+const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART, PRODUCT_CART_QUANTITY } =
+  ActionTypes;
 
 export const productCartManager = (
   selectedProduct: SelectedProduct | number,
@@ -11,5 +12,15 @@ export const productCartManager = (
         ? ADD_PRODUCT_CART
         : REMOVE_PRODUCT_CART,
     payload: selectedProduct,
+  };
+};
+
+export const productCartQuantityAction = (
+  productID: number,
+  quantity: number,
+) => {
+  return {
+    type: PRODUCT_CART_QUANTITY,
+    payload: [productID, quantity],
   };
 };
