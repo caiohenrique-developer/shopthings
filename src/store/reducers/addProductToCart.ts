@@ -1,6 +1,7 @@
 import { Reducer } from 'react';
 
-import { ActionTypes, SelectedProduct } from '../actions/types';
+import { ActionTypes, SelectedProduct } from '@store/actions/types';
+
 import { ActionProps } from './types';
 
 const { ADD_PRODUCT_TO_CART } = ActionTypes;

@@ -10,8 +10,8 @@ import { ProductCart } from '@components/ProductCart';
 import { useCartOpen } from '@hooks/useCartOpen';
 
 import CloseIconSVG from '@assets/close-icon.svg';
+import placeholder from '@assets/product-placeholder.png';
 
-import placeholder from '../../assets/product-placeholder.png';
 import { Container } from './styles';
 
 export const Cart = () => {

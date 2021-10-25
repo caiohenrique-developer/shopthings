@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 
 import Image from 'next/image';
 
+import { addProductToCartAction } from '@store/actions/addProductToCart';
+
 import { formattedCurrency } from '@utils/formatCurrency';
 
-import { addProductToCartAction } from '../../store/actions/addProductToCart';
 import { Container } from './styles';
 
 type ProductProps = {
