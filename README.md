@@ -32,12 +32,35 @@
 
 <img align="right" src="https://img.shields.io/badge/Project%20Status%20-🚧%20(WIP)%20🚧-2C8EBB?style=flat&logo=statuspage&logoColor=white&color=yellowgreen"/>
 
+###### Header > Desktop
+
+- [x] Cart button
+  - Toggle the cart menu
+  - Show the quantity of products in the shopping list
+
+###### Header > Tablet & Mobile
+
+- [x] Menu button
+  - Toggle the navigation menu
+- [x] Cart button
+  - Toggle the cart menu
+  - Show the quantity of products in the shopping list
+
 ###### Home
 
-- [x] <kbd>...</kbd>
 - [x] List available products
-- Any suggestion?
-  - <a href="#phone">Contact me!</a>
+
+###### Cart
+
+- [x] Open empty cart
+- [x] Products in the shopping list
+
+  - Total items quantity
+  - Grand total price
+  - [ ] Handle the quantity of the product
+  - Remove target product
+
+- **_Any suggestion?_** <a href="#phone">Contact me!</a>
 
 #### <a name="flying_saucer"></a> <br>
 
