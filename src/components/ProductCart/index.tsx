@@ -58,7 +58,7 @@ export const ProductCart = ({
       </div>
 
       <div>
-        <span>{formattedCurrency(price)}</span>
+        <span>{formattedCurrency(price, 'USD')}</span>
         <h2>{name}</h2>
         <div>
           <button

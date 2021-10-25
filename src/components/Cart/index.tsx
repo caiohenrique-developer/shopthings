@@ -89,7 +89,7 @@ export const Cart = () => {
                 Grand total:
                 <strong>
                   {productCartTotalPrice
-                    ? formattedCurrency(productCartTotalPrice)
+                    ? formattedCurrency(productCartTotalPrice, 'USD')
                     : '$0.00'}
                 </strong>
               </span>

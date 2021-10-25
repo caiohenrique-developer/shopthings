@@ -41,7 +41,7 @@ export const Product = ({
       </div>
 
       <div>
-        <span>{formattedCurrency(price)}</span>
+        <span>{formattedCurrency(price, 'USD')}</span>
         <h2>{name}</h2>
         <p>{description}</p>
         <button
