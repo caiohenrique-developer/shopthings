@@ -3,23 +3,30 @@ import { useDispatch } from 'react-redux';
 
 import Image from 'next/image';
 
-import { addProductToCartAction } from '@store/actions/addProductToCart';
+import { productCartManager } from '@store/actions/productCartManager';
 
 import { formattedCurrency } from '@utils/formatCurrency';
 
 import { Container } from './styles';
 
 type ProductProps = {
+  productID: number;
   name: string;
   price: number;
   description: string;
   image: string;
 };
 
-export const Product = ({ name, price, description, image }: ProductProps) => {
+export const Product = ({
+  productID,
+  name,
+  price,
+  description,
+  image,
+}: ProductProps) => {
   const dispatch = useDispatch();
 
-  const selectedProduct = { name, price, image };
+  const addProduct = { productID, name, price, image, selected: true };
 
   return (
     <Container>
@@ -39,7 +46,7 @@ export const Product = ({ name, price, description, image }: ProductProps) => {
         <p>{description}</p>
         <button
           type='button'
-          onClick={() => dispatch(addProductToCartAction(selectedProduct))}
+          onClick={() => dispatch(productCartManager(addProduct))}
         >
           Buy now
         </button>
