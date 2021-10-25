@@ -21,7 +21,7 @@
 <br><br>
 
 <p align="center">
-  <img alt="Shopthings image background" src="./src/assets/mockup-block.png" width="100%" />
+  <img alt="Shopthings image background" src="./src/assets/mockup-desk-tab-mob.png" width="100%" />
 </p>
 
 <br>
