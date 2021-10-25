@@ -69,6 +69,7 @@ export default function Home() {
           {productApi.map(({ id, title, price, description, image }) => (
             <Product
               key={id}
+              productID={id}
               name={title}
               price={price}
               description={description}

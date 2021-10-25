@@ -2,10 +2,10 @@ import { createStore, combineReducers } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { addProductToCartReducer } from '@store/reducers/addProductToCart';
+import { productCartManagerReducer } from '@store/reducers/productCartManager';
 
 const rootReducer = combineReducers({
-  addProductToCart: addProductToCartReducer,
+  productCartManager: productCartManagerReducer,
 });
 
 const persistentState = persistReducer(
