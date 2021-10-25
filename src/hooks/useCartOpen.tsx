@@ -1,11 +1,8 @@
 import React, { createContext, useContext, useState, FC } from 'react';
 
-const CartOpenContext = createContext({} as CartOpenCtxProps);
+import { CartOpenCtxProps } from './types';
 
-type CartOpenCtxProps = {
-  isCartOpen: boolean;
-  setCartOpen(isCartOpen: boolean): void;
-};
+const CartOpenContext = createContext({} as CartOpenCtxProps);
 
 export const CartOpenProvider: FC = ({ children }): JSX.Element => {
   const [isCartOpen, setCartOpen] = useState(false);

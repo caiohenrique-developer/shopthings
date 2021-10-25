@@ -7,6 +7,7 @@ import { ActionTypes, SelectedProduct } from '@store/actions/types';
 import { ProductCartManagerActionProps } from './types';
 
 const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART } = ActionTypes;
+
 export const productCartManagerReducer: Reducer<
   SelectedProduct[],
   ProductCartManagerActionProps
@@ -16,6 +17,7 @@ export const productCartManagerReducer: Reducer<
       case ADD_PRODUCT_CART:
         draft.push(action.payload);
         break;
+
       case REMOVE_PRODUCT_CART:
         draft.map(
           ({ productID }) =>
@@ -24,9 +26,11 @@ export const productCartManagerReducer: Reducer<
             draft.splice(draft.indexOf(action.payload), 1),
         );
         break;
+
       default:
         return draft;
     }
+
     return draft;
   });
 };

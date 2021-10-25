@@ -11,13 +11,7 @@ import CloseIconSVG from '@assets/close-icon.svg';
 import { formattedCurrency } from '@utils/formatCurrency';
 
 import { Container } from './styles';
-
-type ProductCartProps = {
-  productID: number;
-  name: string;
-  price: number;
-  image: string | StaticImageData;
-};
+import { ProductCartProps } from './types';
 
 export const ProductCart = ({
   productID,

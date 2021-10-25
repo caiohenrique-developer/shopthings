@@ -2,6 +2,7 @@ import { SelectorStateProps } from './types';
 
 export const productCartManagerSelector = (state: SelectorStateProps) =>
   state.productCartManager;
+
 export const productCartManagerTotalPriceSelector = (
   state: SelectorStateProps,
 ) => {

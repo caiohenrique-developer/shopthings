@@ -8,14 +8,7 @@ import { productCartManager } from '@store/actions/productCartManager';
 import { formattedCurrency } from '@utils/formatCurrency';
 
 import { Container } from './styles';
-
-type ProductProps = {
-  productID: number;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-};
+import { ProductProps } from './types';
 
 export const Product = ({
   productID,
