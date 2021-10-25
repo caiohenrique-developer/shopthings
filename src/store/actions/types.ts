@@ -6,7 +6,7 @@ export enum ActionTypes {
 
 export type SelectedProduct = {
   productID: number;
-  image: string;
+  image: string | StaticImageData;
   name: string;
   price: number;
   selected: boolean;

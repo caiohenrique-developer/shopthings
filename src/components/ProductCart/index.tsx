@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
 
 import Image from 'next/image';
+
+import { productCartManager } from '@store/actions/productCartManager';
 
 import CloseIconSVG from '@assets/close-icon.svg';
 
@@ -10,13 +13,21 @@ import { formattedCurrency } from '@utils/formatCurrency';
 import { Container } from './styles';
 
 type ProductCartProps = {
+  productID: number;
   name: string;
   price: number;
   image: string | StaticImageData;
 };
 
-export const ProductCart = ({ name, price, image }: ProductCartProps) => {
+export const ProductCart = ({
+  productID,
+  name,
+  price,
+  image,
+}: ProductCartProps) => {
   const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
 
   const handleQuantity = (buttonID: string) => {
     if (quantity > 0 && buttonID === 'increase') {
@@ -24,6 +35,14 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
     } else if (quantity > 1 && buttonID === 'decrease') {
       setQuantity(quantity - 1);
     }
+  };
+
+  const removeProduct = {
+    productID,
+    name,
+    price,
+    image,
+    selected: false,
   };
 
   return (
@@ -56,7 +75,10 @@ export const ProductCart = ({ name, price, image }: ProductCartProps) => {
         </div>
       </div>
 
-      <button type='button'>
+      <button
+        type='button'
+        onClick={() => dispatch(productCartManager(removeProduct))}
+      >
         <CloseIconSVG />
       </button>
     </Container>
