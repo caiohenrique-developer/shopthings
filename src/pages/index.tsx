@@ -38,35 +38,12 @@ export default function Home() {
           'products',
         );
 
-        // products.forEach(
-        //   ({ id, title, price, image, category, description, rating }) => {
-        //     const product = {
-        //       id,
-        //       title,
-        //       price,
-        //       image,
-        //       category,
-        //       description,
-        //       rating: { count: rating.count },
-        //       quantity: 1,
-        //     };
-
-        //     // setProductApi([product]);
-        //   },
-        // );
-
         setProductApi(products);
       } catch (err) {
         throw new Error(err);
       }
     };
     fetchProducts();
-
-    // console.table(productApi);
-
-    // productApi.forEach((product) => {
-    //   console.table({ ...product, quantity: 1 });
-    // });
   }, [productApi]);
 
   return (
@@ -89,16 +66,19 @@ export default function Home() {
         </MediaQuery>
 
         <section>
-          {productApi.map(({ id, title, price, description, image }) => (
-            <Product
-              key={id}
-              productID={id}
-              name={title}
-              price={price}
-              description={description}
-              image={image}
-            />
-          ))}
+          {productApi.map(
+            ({ id, title, price, category, description, image }) => (
+              <Product
+                key={id}
+                productID={id}
+                name={title}
+                image={image}
+                price={price}
+                category={category}
+                description={description}
+              />
+            ),
+          )}
         </section>
       </Container>
     </>

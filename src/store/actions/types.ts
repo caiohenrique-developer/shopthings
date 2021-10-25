@@ -12,7 +12,4 @@ export type SelectedProduct = {
   quantity: number;
   category: string;
   description: string;
-  rating: {
-    count: number;
-  };
 };

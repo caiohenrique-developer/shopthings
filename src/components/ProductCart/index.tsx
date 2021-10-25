@@ -31,14 +31,6 @@ export const ProductCart = ({
     }
   };
 
-  const removeProduct = {
-    productID,
-    name,
-    price,
-    image,
-    selected: false,
-  };
-
   return (
     <Container>
       <div>

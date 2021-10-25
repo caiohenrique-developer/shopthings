@@ -1,18 +1,16 @@
-import { Reducer } from 'react';
-
 import { produce } from 'immer';
 
-import { ActionTypes, SelectedProduct } from '@store/actions/types';
+import { ActionTypes } from '@store/actions/types';
 
 import { ProductCartManagerActionProps } from './types';
 
 const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART } = ActionTypes;
 
-export const productCartManagerReducer: Reducer<
-  SelectedProduct[],
-  ProductCartManagerActionProps
-> = (state = [], action: ProductCartManagerActionProps): SelectedProduct[] => {
-  return produce(state, (draft): SelectedProduct[] => {
+export const productCartManagerReducer = (
+  state = [],
+  action: ProductCartManagerActionProps,
+) => {
+  return produce(state, (draft) => {
     switch (action.type) {
       case ADD_PRODUCT_CART:
         draft.push(action.payload);

@@ -14,6 +14,7 @@ export const Product = ({
   productID,
   name,
   price,
+  category,
   description,
   image,
 }: ProductProps) => {
@@ -23,16 +24,11 @@ export const Product = ({
     productID,
     name,
     price,
-    category: 'string',
-    description: 'string',
+    category,
+    description,
     image,
     quantity: 1,
-    rating: {
-      count: 8,
-    },
   };
-
-  // dispatch(productCartManager(addProduct));
 
   return (
     <Container>
