@@ -76,17 +76,17 @@
   <tr align="center">
     <td><a href="https://axios-http.com/">Axios</a></td>
     <td><a href="https://github.com/conventional-changelog/commitlint">Commitlint</a></td>
-    <td><a href="https://code.visualstudio.com/docs/editor/debugging">VS Code Debugger</a></td>
+    <td><a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=pt-BR">Redux DevTools Debugger</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://animate.style/">Animate.css</a></td>
     <td><a href="https://github.com/commitizen/cz-cli">Commitizen</a></td>
-    <td><a href="#"></a></td>
+    <td><a href="https://code.visualstudio.com/docs/editor/debugging">VS Code Debugger</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/luukdv/hamburger-react">Hamburger-react</a></td>
     <td><a href="https://github.com/leoforfree/cz-customizable">CZ-customizable</a></td>
-    <td><a href="#"></a></td>
+    <td><a href="https://vercel.com/">Vercel</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/immerjs/immer">Immer</a></td>
@@ -144,12 +144,17 @@
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
+    <td><a href="https://github.com/zalmoxisus/redux-devtools-extension">Redux-devtools-extension</a></td>
+    <td><a href="#"></a></td>
+    <td><a href="#"></a></td>
+  </tr>
+  <tr align="center">
     <td><a href="https://styled-components.com/">Styled-components</a></td>
     <td><a href="#"></a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
-    <td><a href="https://vercel.com/">Vercel</a></td>
+    <td><a href="#"></a></td>
     <td><a href="#"></a></td>
     <td><a href="#"></a></td>
   </tr>
