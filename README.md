@@ -30,8 +30,6 @@
 
 ## 💎 Roadmap <a href="#top"><img align="right" width="25" src="./src/assets/icon-arrow-up.svg" /></a>
 
-<img align="right" src="https://img.shields.io/badge/Project%20Status%20-🚧%20(WIP)%20🚧-2C8EBB?style=flat&logo=statuspage&logoColor=white&color=yellowgreen"/>
-
 ###### Header > Desktop
 
 - [x] Cart button
@@ -56,8 +54,8 @@
 - [x] Products in the shopping list
 
   - Total items quantity
+  - Handle the quantity of the product
   - Grand total price
-  - [ ] Handle the quantity of the product
   - Remove target product
 
 - **_Any suggestion?_** <a href="#phone">Contact me!</a>
