@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Player } from '@lottiefiles/react-lottie-player';
@@ -27,13 +27,6 @@ export const Cart = () => {
   const productCartTotalPrice = useSelector(
     productCartManagerTotalPriceSelector,
   );
-  const [cartContent, setCartContent] = useState(false);
-  useEffect(() => {
-    const emptyBag = productList.length === 0;
-    setCartContent(emptyBag);
-  }, [productList]);
-
-  console.log('totalProductCart', totalProductCart);
 
   return (
     <Container className='animate__animated animate__fadeInRightBig'>
@@ -43,15 +36,17 @@ export const Cart = () => {
             <CloseIconSVG />
           </button>
 
-          {!cartContent && (
+          {totalProductCart ? (
             <span>
-              Total items: <strong>{productList.length}</strong>
+              Total items: <strong>{totalProductCart}</strong>
             </span>
+          ) : (
+            <></>
           )}
         </header>
 
-        <div className={!cartContent && 'active'}>
-          {productList.length === 0 ? (
+        <div className={totalProductCart ? 'active' : ''}>
+          {!totalProductCart ? (
             <>
               <Player
                 loop
@@ -81,7 +76,7 @@ export const Cart = () => {
         </div>
 
         <footer>
-          {!cartContent && (
+          {totalProductCart ? (
             <div>
               <span>
                 Shipping &#38; Handling: <strong>$0.00</strong>
@@ -98,10 +93,12 @@ export const Cart = () => {
                 </strong>
               </span>
             </div>
+          ) : (
+            <></>
           )}
 
-          <button type='button' className={!cartContent && 'active'}>
-            {cartContent ? 'Start shopping' : 'Go to checkout'}
+          <button type='button' className={totalProductCart ? 'active' : ''}>
+            {!totalProductCart ? 'Start shopping' : 'Go to checkout'}
           </button>
         </footer>
       </div>

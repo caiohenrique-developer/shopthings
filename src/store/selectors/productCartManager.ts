@@ -13,8 +13,8 @@ export const productCartManagerTotalPriceSelector = (
 };
 
 export const totalProductCartManagerSelector = (state: SelectorStateProps) => {
-  const totalProductCart = state.productCartManager
+  const totalProduct = state.productCartManager
     .filter(({ quantity }) => quantity)
     .reduce((acc, { quantity }) => acc + quantity, 0);
-  return totalProductCart;
+  return totalProduct;
 };
