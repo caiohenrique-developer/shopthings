@@ -6,6 +6,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import {
   productCartManagerSelector,
   productCartManagerTotalPriceSelector,
+  totalProductCartManagerSelector,
 } from '@store/selectors/productCartManager';
 
 import { ProductCart } from '@components/ProductCart';
@@ -22,6 +23,7 @@ import { Container } from './styles';
 export const Cart = () => {
   const { setCartOpen } = useCartOpen();
   const productList = useSelector(productCartManagerSelector);
+  const totalProductCart = useSelector(totalProductCartManagerSelector);
   const productCartTotalPrice = useSelector(
     productCartManagerTotalPriceSelector,
   );
@@ -30,6 +32,8 @@ export const Cart = () => {
     const emptyBag = productList.length === 0;
     setCartContent(emptyBag);
   }, [productList]);
+
+  console.log('totalProductCart', totalProductCart);
 
   return (
     <Container className='animate__animated animate__fadeInRightBig'>

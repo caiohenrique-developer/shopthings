@@ -11,3 +11,10 @@ export const productCartManagerTotalPriceSelector = (
     .reduce((acc, { price, quantity }) => price * quantity + acc, 0);
   return totalPrice;
 };
+
+export const totalProductCartManagerSelector = (state: SelectorStateProps) => {
+  const totalProductCart = state.productCartManager
+    .filter(({ quantity }) => quantity)
+    .reduce((acc, { quantity }) => acc + quantity, 0);
+  return totalProductCart;
+};
