@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Tooltip } from '@mui/material';
 import { Sling as Hamburger } from 'hamburger-react';
 
-import { productCartManagerSelector } from '@store/selectors/productCartManager';
+import { totalProductCartManagerSelector } from '@store/selectors/productCartManager';
 
 import { Cart } from '@components/Cart';
 
@@ -24,7 +24,7 @@ export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const { isCartOpen, setCartOpen } = useCartOpen();
-  const productList = useSelector(productCartManagerSelector);
+  const totalProductCart = useSelector(totalProductCartManagerSelector);
 
   const { desktop, tablet, mobile } = responsiveBreakpoint;
 
@@ -160,9 +160,7 @@ export const Header = () => {
             </button>
             <Tooltip
               title={
-                productList.length > 0
-                  ? 'Product cart quantity'
-                  : 'Your bag is empty'
+                totalProductCart ? 'Product cart quantity' : 'Your bag is empty'
               }
               arrow
             >
@@ -171,14 +169,11 @@ export const Header = () => {
                 disabled={isMenuOpen}
                 onClick={() => setCartOpen(true)}
                 className={
-                  productList.length > 0 &&
-                  'animate__animated animate__bounceIn'
+                  totalProductCart ? 'animate__animated animate__bounceIn' : ''
                 }
               >
-                <CgShoppingCart
-                  className={productList.length > 0 && 'active'}
-                />
-                {productList.length > 0 && <span>{productList.length}</span>}
+                <CgShoppingCart className={totalProductCart ? 'active' : ''} />
+                {totalProductCart ? <span>{totalProductCart}</span> : <></>}
               </button>
             </Tooltip>
           </div>
