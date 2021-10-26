@@ -53,7 +53,7 @@ export default function Home() {
       </Head>
 
       <Container className='app-container'>
-        <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
+        <MediaQuery minWidth={desktop.breakpoint.min}>
           <header>
             <Image
               src={bannerTop}

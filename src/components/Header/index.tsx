@@ -46,7 +46,7 @@ export const Header = () => {
             </a>
           </Link>
 
-          <MediaQuery minDeviceWidth={desktop.breakpoint.min}>
+          <MediaQuery minWidth={desktop.breakpoint.min}>
             <nav>
               <ul>
                 <li>
@@ -89,8 +89,8 @@ export const Header = () => {
           </MediaQuery>
 
           <MediaQuery
-            minDeviceWidth={mobile.breakpoint.min}
-            maxDeviceWidth={tablet.breakpoint.max}
+            minWidth={mobile.breakpoint.min}
+            maxWidth={tablet.breakpoint.max}
           >
             {isMenuOpen && (
               <nav className='animate__animated animate__fadeInLeft'>
@@ -138,8 +138,8 @@ export const Header = () => {
           <div>
             <button type='button' disabled={isCartOpen}>
               <MediaQuery
-                minDeviceWidth={mobile.breakpoint.min}
-                maxDeviceWidth={tablet.breakpoint.max}
+                minWidth={mobile.breakpoint.min}
+                maxWidth={tablet.breakpoint.max}
               >
                 <Hamburger
                   toggled={isMenuOpen}

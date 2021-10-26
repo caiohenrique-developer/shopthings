@@ -13,6 +13,10 @@ export const responsiveLayout = css`
           left: 48%;
           transform: translateX(-54%);
           width: 60%;
+
+          ul li a {
+            font-size: min(1.2vw, max(1rem));
+          }
         }
       }
 
