@@ -5,6 +5,17 @@ export const responsiveLayout = css`
   /* Desktop */
   @media screen and (min-width: 1024px) {
     #__next {
+      header .app-container {
+        position: relative;
+
+        nav {
+          position: absolute;
+          left: 48%;
+          transform: translateX(-54%);
+          width: 60%;
+        }
+      }
+
       main.app-container > header {
         position: relative;
 

@@ -50,15 +50,11 @@ export const Container = styled.header`
             color: var(--purple_608);
           }
         }
-        &:last-of-type {
-          position: relative;
-          span {
-            position: absolute;
-            color: var(--white_fff);
-            border-radius: 2rem;
-            background: var(--purple_424);
-            padding: 0.25rem 0.5rem;
-          }
+        &:last-of-type span {
+          color: var(--white_fff);
+          border-radius: 2rem;
+          background: var(--purple_424);
+          padding: 0.25rem 0.5rem;
         }
       }
     }
