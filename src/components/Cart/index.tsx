@@ -29,7 +29,7 @@ export const Cart = () => {
   );
 
   return (
-    <Container className='animate__animated animate__fadeInRightBig'>
+    <Container className='animate__animated animate__fadeInLeftBig'>
       <div>
         <header>
           <button type='button' onClick={() => setCartOpen(false)}>
