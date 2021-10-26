@@ -79,17 +79,17 @@
   <tr align="center">
     <td><a href="https://animate.style/">Animate.css</a></td>
     <td><a href="https://github.com/commitizen/cz-cli">Commitizen</a></td>
-    <td><a href="https://code.visualstudio.com/docs/editor/debugging">VS Code Debugger</a></td>
+    <td><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/luukdv/hamburger-react">Hamburger-react</a></td>
     <td><a href="https://github.com/leoforfree/cz-customizable">CZ-customizable</a></td>
-    <td><a href="https://vercel.com/">Vercel</a></td>
+    <td><a href="https://code.visualstudio.com/docs/editor/debugging">VS Code Debugger</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/immerjs/immer">Immer</a></td>
     <td><a href="https://eslint.org/">ESLint</a></td>
-    <td><a href="#"></a></td>
+    <td><a href="https://vercel.com/">Vercel</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/mifi/react-lottie-player">LottieFiles</a></td>
