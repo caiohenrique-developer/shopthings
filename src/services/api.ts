@@ -7,7 +7,7 @@ export const { fakeStoreApi, hostEnv } = {
   hostEnv: axios.create({
     baseURL:
       process.env.NODE_ENV !== 'production'
-        ? 'http://localhost:3000/api' // development
-        : 'https://shopthings.vercel.app/api', // production
+        ? '/api' // development
+        : '/api', // production
   }),
 };

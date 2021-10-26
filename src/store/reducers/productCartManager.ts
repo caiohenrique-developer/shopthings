@@ -21,17 +21,13 @@ export const productCartManagerReducer = (
 
         if (product.length > 0) product[0].quantity += 1;
         else draft.push(action.payload);
-
         break;
       }
 
       case REMOVE_PRODUCT_CART: {
-        draft.forEach(
-          ({ productID }) =>
-            productID &&
-            productID === action.payload &&
-            draft.splice(draft.indexOf(action.payload), 1),
-        );
+        draft.forEach(({ productID }, index) => {
+          if (productID && productID === action.payload) draft.splice(index, 1);
+        });
         break;
       }
 
