@@ -18,7 +18,7 @@ export const Container = styled.section`
   > div {
     position: relative;
 
-    gap: 0.8rem;
+    gap: 1.8rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -62,7 +62,7 @@ export const Container = styled.section`
       justify-content: center;
 
       overflow-y: auto;
-      margin-right: 1rem;
+      margin: -2rem 1rem 0 0;
       padding: 0.5rem 0.563rem 0.5rem 1.563rem;
 
       &.active {
