@@ -67,13 +67,14 @@ export default function Home() {
 
         <section>
           {productApi.map(
-            ({ id, title, price, category, description, image }) => (
+            ({ id, title, price, category, description, image, rating }) => (
               <Product
                 key={id}
                 productID={id}
                 name={title}
                 image={image}
                 price={price}
+                stock={rating.count}
                 category={category}
                 description={description}
               />

@@ -14,9 +14,10 @@ export const Product = ({
   productID,
   name,
   price,
+  image,
+  stock,
   category,
   description,
-  image,
 }: ProductProps) => {
   const dispatch = useDispatch();
 
@@ -25,6 +26,7 @@ export const Product = ({
     name,
     price,
     image,
+    stock,
     category,
     description,
     quantity: 1,

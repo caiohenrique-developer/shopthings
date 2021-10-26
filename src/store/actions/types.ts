@@ -11,6 +11,7 @@ export type SelectedProduct = {
   name: string;
   price: number;
   quantity: number;
+  stock: number;
   category: string;
   description: string;
 };
