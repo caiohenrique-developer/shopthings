@@ -61,13 +61,14 @@ export const Cart = () => {
               </p>
             </>
           ) : (
-            productList.map(({ productID, name, price, image }) => {
+            productList.map(({ productID, name, price, quantity, image }) => {
               return (
                 <ProductCart
                   key={productID}
                   productID={productID}
                   name={name}
                   price={price}
+                  quantity={quantity}
                   image={!image ? placeholder : image}
                 />
               );
