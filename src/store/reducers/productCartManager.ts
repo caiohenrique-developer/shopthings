@@ -14,7 +14,14 @@ export const productCartManagerReducer = (
   return produce(state, (draft) => {
     switch (action.type) {
       case ADD_PRODUCT_CART: {
-        draft.push(action.payload);
+        const product = draft.filter(
+          ({ productID }) =>
+            productID && productID === action.payload.productID,
+        );
+
+        if (product.length > 0) product[0].quantity += 1;
+        else draft.push(action.payload);
+
         break;
       }
 
