@@ -81,6 +81,7 @@ export const Container = styled.div`
           font-size: 1.5rem;
         }
         input {
+          opacity: 1;
           width: 100%;
           text-align: center;
           font-weight: var(--bold);

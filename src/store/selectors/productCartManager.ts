@@ -8,6 +8,6 @@ export const productCartManagerTotalPriceSelector = (
 ) => {
   const totalPrice = state.productCartManager
     .filter(({ price }) => price)
-    .reduce((acc, { price }) => acc + price, 0);
+    .reduce((acc, { price, quantity }) => price * quantity + acc, 0);
   return totalPrice;
 };
