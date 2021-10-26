@@ -57,7 +57,11 @@ export const ProductCart = ({
             <BsChevronCompactLeft />
           </button>
           <input type='number' maxLength={2} value={quantity} disabled />
-          <button type='button' onClick={() => handleQuantity('increase')}>
+          <button
+            type='button'
+            disabled={quantity === 4}
+            onClick={() => handleQuantity('increase')}
+          >
             <BsChevronCompactRight />
           </button>
         </div>

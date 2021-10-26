@@ -85,6 +85,7 @@ export const Container = styled.div`
           width: 100%;
           text-align: center;
           font-weight: var(--bold);
+          background: transparent;
 
           &[type='number']::-webkit-inner-spin-button,
           &[type='number']::-webkit-outer-spin-button {
