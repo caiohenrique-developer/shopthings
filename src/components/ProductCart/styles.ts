@@ -74,12 +74,10 @@ export const Container = styled.div`
         border: 1px solid rgb(0 0 0 / 9%);
 
         button {
+          font-size: 1.5rem;
           padding: 0.2rem 1rem;
         }
 
-        button {
-          font-size: 1.5rem;
-        }
         input {
           opacity: 1;
           width: 100%;
@@ -87,11 +85,14 @@ export const Container = styled.div`
           font-weight: var(--bold);
           background: transparent;
 
+          &[type='number'],
           &[type='number']::-webkit-inner-spin-button,
           &[type='number']::-webkit-outer-spin-button {
             margin: 0;
             padding: 0;
+            appearance: none;
             -webkit-appearance: none;
+            -moz-appearance: textfield;
           }
         }
       }
