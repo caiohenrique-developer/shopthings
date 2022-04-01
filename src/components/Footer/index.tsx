@@ -2,6 +2,8 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import { BackToTopBtn } from '@components/BackToTopBtn';
+
 import { Container } from './styles';
 
 export const Footer = () => {
@@ -179,18 +181,22 @@ export const Footer = () => {
             </ul>
           </nav>
 
-          <p>
-            Copyright &copy; {year} $hopthings, done with ☕ by:{' '}
-            <Link
-              href='https://github.com/caiohenrique-developer/shopthings'
-              passHref
-            >
-              <a target='_blank' rel='noreferrer'>
-                caiohenrique-developer
-              </a>
-            </Link>
-            .
-          </p>
+          <div className='box-description'>
+            <p>
+              Copyright &copy; {year} $hopthings, done with ☕ by:{' '}
+              <Link
+                href='https://github.com/caiohenrique-developer/shopthings'
+                passHref
+              >
+                <a target='_blank' rel='noreferrer'>
+                  caiohenrique-developer
+                </a>
+              </Link>
+              .
+            </p>
+
+            <BackToTopBtn />
+          </div>
         </div>
       </Container>
     </>

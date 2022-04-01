@@ -122,6 +122,19 @@ export const responsiveLayout = css`
               }
             }
           }
+
+          .box-description {
+            flex-direction: column-reverse;
+
+            button {
+              padding: 0.8rem;
+              margin-bottom: 1rem;
+
+              svg {
+                width: 0.8rem;
+              }
+            }
+          }
         }
       }
     }

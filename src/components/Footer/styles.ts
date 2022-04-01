@@ -55,29 +55,35 @@ export const Container = styled.footer`
       }
     }
 
-    p {
-      padding: 2.6rem 2.6rem 0;
+    .box-description {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      color: var(--gray_aca);
-      font-size: min(18px, 3vw);
-      text-align: center;
+      padding: 2.6rem 0;
 
-      a {
-        display: inline-block;
-        color: var(--purple_608);
+      p {
+        color: var(--gray_aca);
+        font-size: min(18px, 3vw);
+        text-align: center;
 
-        &::after {
-          content: '';
+        a {
+          display: inline-block;
+          color: var(--purple_608);
 
-          display: block;
-          width: 0;
-          height: 1px;
-          background: var(--purple_608);
-          transition: 0.5s;
-        }
+          &::after {
+            content: '';
 
-        &:hover::after {
-          width: 100%;
+            display: block;
+            width: 0;
+            height: 1px;
+            background: var(--purple_608);
+            transition: 0.5s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
         }
       }
     }
