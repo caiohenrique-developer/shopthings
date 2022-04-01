@@ -7,12 +7,14 @@ import MediaQuery from 'react-responsive';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { Tooltip } from '@mui/material';
-import { Sling as Hamburger } from 'hamburger-react';
+import { Sling as BurgerBtn } from 'hamburger-react';
 
 import { totalProductCartManagerSelector } from '@store/selectors/productCartManager';
 
 import { Cart } from '@components/Cart';
+import { ScrollPageProgressStatusBar } from '@components/ScrollPageProgressStatusBar';
 
 import { useCartOpen } from '@hooks/useCartOpen';
 
@@ -141,7 +143,7 @@ export const Header = () => {
                 minWidth={mobile.breakpoint.min}
                 maxWidth={tablet.breakpoint.max}
               >
-                <Hamburger
+                <BurgerBtn
                   toggled={isMenuOpen}
                   toggle={setMenuOpen}
                   rounded
@@ -179,6 +181,9 @@ export const Header = () => {
           </div>
         </div>
       </Container>
+
+      <CssBaseline />
+      <ScrollPageProgressStatusBar />
     </>
   );
 };
