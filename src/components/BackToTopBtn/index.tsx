@@ -13,7 +13,7 @@ export const BackToTopBtn = (): JSX.Element => {
   };
 
   return (
-    <Container onClick={scrollToTop}>
+    <Container onClick={scrollToTop} data-tst='back-to-top-btn'>
       <BackToTopIcon />
     </Container>
   );
