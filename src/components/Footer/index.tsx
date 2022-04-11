@@ -192,7 +192,7 @@ export const Footer = () => {
                 href='https://github.com/caiohenrique-developer/shopthings'
                 passHref
               >
-                <a target='_blank' rel='noreferrer'>
+                <a target='_blank' rel='noreferrer' data-tst='repository-link'>
                   caiohenrique-developer
                 </a>
               </Link>
