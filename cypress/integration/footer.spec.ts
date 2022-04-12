@@ -1,12 +1,13 @@
 /// <reference types="cypress" />
 
-describe('check user buttons handler', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
+beforeEach(() => {
+  cy.visit('/');
+});
 
-  it('should click the back to top button to return to the top of the page', () => {
-    // scroll down to the bottom of the page and find the back to top button
+// successful results
+describe("check the user's successful interactions handler", () => {
+  it('should be able to click on the back to top button to return to the top of the page', () => {
+    // scroll down to the bottom of the page and find the back to top button element
     cy.get('button[data-tst=back-to-top-btn]')
       .scrollIntoView()
       .should('be.visible')
@@ -16,8 +17,8 @@ describe('check user buttons handler', () => {
     cy.window().its('scrollY').should('equal', 0);
   });
 
-  it('should click on the anchor link to go to my github project repository', () => {
-    // scroll down to the bottom of the page and find the anchor link
+  it("should be able to click on the anchor link to go to my project's repository", () => {
+    // scroll down to the bottom of the page and find the anchor link element
     cy.get('a[data-tst=repository-link]')
       .scrollIntoView()
       .should('be.visible')
@@ -25,6 +26,21 @@ describe('check user buttons handler', () => {
       .should('not.have.attr', 'href', undefined)
       .click();
   });
+
+  it('should be able to return application creation date', () => {
+    // scroll down to the bottom of the page and find the element with the application date
+    cy.get('p[data-tst=footer-description]')
+      .scrollIntoView()
+      .should('be.visible')
+      .contains('2021');
+  });
+});
+
+// failure results
+describe("check the user's failure interactions handler", () => {
+  return {
+    ok: false,
+  };
 });
 
 export {};

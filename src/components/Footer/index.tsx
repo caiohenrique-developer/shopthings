@@ -186,7 +186,7 @@ export const Footer = () => {
           </nav>
 
           <div className='box-description'>
-            <p>
+            <p data-tst='footer-description'>
               Copyright &copy; {year} $hopthings, done with ☕ by:{' '}
               <Link
                 href='https://github.com/caiohenrique-developer/shopthings'
