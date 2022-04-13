@@ -29,10 +29,17 @@ describe("check the user's successful interactions handler", () => {
 
   it('should be able to return application creation date', () => {
     // scroll down to the bottom of the page and find the element with the application date
+    const appCreatedAt = new Date(2021, 10, 1).getFullYear();
+    const currentYear = new Date().getFullYear();
+    const year =
+      currentYear > appCreatedAt
+        ? `${appCreatedAt}-${currentYear}`
+        : currentYear;
+
     cy.get('p[data-tst=footer-description]')
       .scrollIntoView()
       .should('be.visible')
-      .contains('2021');
+      .contains(year);
   });
 });
 
