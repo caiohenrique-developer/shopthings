@@ -10,6 +10,7 @@ describe("check the user's successful interactions handler", () => {
     cy.get('button[data-tst=back-to-top-btn]')
       .scrollIntoView()
       .should('be.visible')
+      .and('be.enabled')
       .click();
 
     // check that the user is at the top of the page
