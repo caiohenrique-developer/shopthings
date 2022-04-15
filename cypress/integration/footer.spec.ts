@@ -23,7 +23,11 @@ describe("check the user's successful interactions handler", () => {
       .scrollIntoView()
       .should('be.visible')
       .should('have.attr', 'target', '_blank')
-      .should('not.have.attr', 'href', undefined)
+      .should(
+        'have.attr',
+        'href',
+        'https://github.com/caiohenrique-developer/shopthings',
+      )
       .click();
   });
 
