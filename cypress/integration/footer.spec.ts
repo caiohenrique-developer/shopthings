@@ -4,7 +4,7 @@ beforeEach(() => {
   cy.visit('/');
 });
 
-describe("check the user's successful interactions handler", () => {
+describe("check the user's footer interactions handler", () => {
   it('should be able to click on the back to top button to return to the top of the page', () => {
     // scroll down to the bottom of the page to find the back to top button element
     cy.get('button[data-tst=back-to-top-btn]')
