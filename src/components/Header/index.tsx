@@ -37,7 +37,7 @@ export const Header = () => {
 
         <div className='app-container'>
           <Link href='/' passHref>
-            <a>
+            <a data-tst='go-to-home'>
               <Image
                 src='/assets/logotipo.png'
                 alt='App logotipo'
