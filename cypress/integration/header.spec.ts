@@ -15,6 +15,7 @@ describe("check the user's header interactions handler", () => {
 
     // check if the user is redirected to the home page
     cy.url().should('include', '/');
+    cy.location('pathname').should('eq', '/');
   });
 });
 
