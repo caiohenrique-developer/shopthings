@@ -95,7 +95,10 @@ export const Header = () => {
             maxWidth={tablet.breakpoint.max}
           >
             {isMenuOpen && (
-              <nav className='animate__animated animate__fadeInLeft'>
+              <nav
+                className='animate__animated animate__fadeInLeft'
+                data-tst='responsive-navigation-menu'
+              >
                 <ul>
                   <li>
                     <Link href='#' passHref>
@@ -138,7 +141,7 @@ export const Header = () => {
           </MediaQuery>
 
           <div>
-            <button type='button' disabled={isCartOpen}>
+            <button type='button' disabled={isCartOpen} data-tst='burger-btn'>
               <MediaQuery
                 minWidth={mobile.breakpoint.min}
                 maxWidth={tablet.breakpoint.max}
