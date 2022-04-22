@@ -1,7 +1,7 @@
 {
   "baseUrl": "http://localhost:3000",
   "component": {
-    "testFiles": "*_/_.spec.{js,ts,jsx,tsx}",
-    "componentFolder": "cypress/integration/headerTst.spec.tsx"
+    "testFiles": "**/*.spec.{js,ts,jsx,tsx}",
+    "componentFolder": "cypress"
   }
 }
