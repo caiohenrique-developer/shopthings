@@ -157,10 +157,10 @@ export const Header = () => {
                 />
               </MediaQuery>
             </button>
-            <button type='button' disabled>
+            <button type='button' disabled data-tst='my-account-btn'>
               <FiUser />
             </button>
-            <button type='button' disabled>
+            <button type='button' disabled data-tst='search-for-btn'>
               <FiSearch />
             </button>
             <Tooltip

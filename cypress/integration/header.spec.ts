@@ -84,6 +84,17 @@ describe("check the user's header elements interactions handler", () => {
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
     });
   });
+
+  it('should not be able to click on my account & search disabled button', () => {
+    // find disabled buttons
+    cy.get('button[data-tst=my-account-btn]')
+      .should('exist')
+      .and('be.disabled');
+
+    cy.get('button[data-tst=search-for-btn]')
+      .should('exist')
+      .and('be.disabled');
+  });
 });
 
 export {};
