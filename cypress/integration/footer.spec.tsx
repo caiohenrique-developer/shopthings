@@ -1,14 +1,17 @@
 /// <reference types="cypress" />
 
-beforeEach(() => {
-  cy.visit('/');
-});
+import React from 'react';
+
+import { mount } from '@cypress/react';
+
+import { BackToTopBtn } from '@components/BackToTopBtn';
 
 describe("check the user's footer interactions handler", () => {
   it('should be able to click on the back to top button to return to the top of the page', () => {
-    // scroll down to the bottom of the page to find the back to top button element
+    // render and make assertions to back to top button element
+    mount(<BackToTopBtn />);
+
     cy.get('button[data-tst=back-to-top-btn]')
-      .scrollIntoView()
       .should('be.visible')
       .and('be.enabled')
       .click();
@@ -46,5 +49,3 @@ describe("check the user's footer interactions handler", () => {
       .contains(year);
   });
 });
-
-export {};
