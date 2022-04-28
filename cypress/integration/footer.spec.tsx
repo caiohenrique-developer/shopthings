@@ -5,11 +5,19 @@ import React from 'react';
 import { mount } from '@cypress/react';
 
 import { BackToTopBtn } from '@components/BackToTopBtn';
+import { Footer } from '@components/Footer';
+
+import GlobalStyles from '@styles/globals';
 
 describe("check the user's footer interactions handler", () => {
   it('should be able to click on the back to top button to return to the top of the page', () => {
     // render and make assertions to back to top button element
-    mount(<BackToTopBtn />);
+    mount(
+      <>
+        <BackToTopBtn />
+        <GlobalStyles />
+      </>,
+    );
 
     cy.get('button[data-tst=back-to-top-btn]')
       .should('be.visible')
@@ -21,7 +29,14 @@ describe("check the user's footer interactions handler", () => {
   });
 
   it("should be able to click on the anchor link to go to my project's repository", () => {
-    // scroll down to the bottom of the page to find the anchor link element
+    // render and make assertions to anchor link element
+    mount(
+      <>
+        <Footer />
+        <GlobalStyles />
+      </>,
+    );
+
     cy.get('a[data-tst=repository-link]')
       .scrollIntoView()
       .should('be.visible')
