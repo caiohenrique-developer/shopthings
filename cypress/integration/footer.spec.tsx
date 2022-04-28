@@ -50,7 +50,14 @@ describe("check the user's footer interactions handler", () => {
   });
 
   it('should be able to return application creation date', () => {
-    // scroll down to the bottom of the page to find the element with the application date
+    // render and make assertions to the element with the application date
+    mount(
+      <>
+        <Footer />
+        <GlobalStyles />
+      </>,
+    );
+
     const appCreatedAt = new Date(2021, 10, 1).getFullYear();
     const currentYear = new Date().getFullYear();
     const year =
@@ -59,7 +66,6 @@ describe("check the user's footer interactions handler", () => {
         : currentYear;
 
     cy.get('p[data-tst=footer-description]')
-      .scrollIntoView()
       .should('be.visible')
       .contains(year);
   });
