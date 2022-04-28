@@ -12,6 +12,13 @@ export const Footer = () => {
   const year =
     currentYear > appCreatedAt ? `${appCreatedAt}-${currentYear}` : currentYear;
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
       <Container>
@@ -197,7 +204,7 @@ export const Footer = () => {
               .
             </p>
 
-            <BackToTopBtn />
+            <BackToTopBtn onClickHandler={scrollToTop} />
           </div>
         </div>
       </Container>
