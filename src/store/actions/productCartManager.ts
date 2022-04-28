@@ -1,4 +1,4 @@
-import { ActionTypes, SelectedProduct } from './types';
+import { ActionTypes, SelectedProduct } from '@store/actions/types';
 
 const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART, PRODUCT_CART_QUANTITY } =
   ActionTypes;

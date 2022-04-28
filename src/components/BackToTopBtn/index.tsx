@@ -1,10 +1,9 @@
 import React from 'react';
 
+import { Container } from '@components/BackToTopBtn/styles';
 import { BackToTopBtnProps } from '@components/BackToTopBtn/types';
 
 import BackToTopIcon from '@assets/icon-arrow-up.svg';
-
-import { Container } from './styles';
 
 export const BackToTopBtn = ({
   onClickHandler,

@@ -1,4 +1,4 @@
-import { CurrencyStyle } from './types';
+import { CurrencyStyle } from '@utils/formatCurrency/types';
 
 export const formattedCurrency = (
   price: number,

@@ -1,8 +1,7 @@
 import { produce } from 'immer';
 
 import { ActionTypes } from '@store/actions/types';
-
-import { ProductCartManagerActionProps } from './types';
+import { ProductCartManagerActionProps } from '@store/reducers/types';
 
 const { ADD_PRODUCT_CART, REMOVE_PRODUCT_CART, PRODUCT_CART_QUANTITY } =
   ActionTypes;

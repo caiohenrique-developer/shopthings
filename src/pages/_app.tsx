@@ -5,14 +5,14 @@ import { AppProps } from 'next/app';
 
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { store, persistentStore } from '@store/index';
+
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
 
 import { CartOpenProvider } from '@hooks/useCartOpen';
 
 import GlobalStyles from '@styles/globals';
-
-import { store, persistentStore } from '../store';
 
 import 'animate.css';
 

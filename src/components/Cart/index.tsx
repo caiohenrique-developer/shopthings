@@ -9,6 +9,7 @@ import {
   totalProductCartManagerSelector,
 } from '@store/selectors/productCartManager';
 
+import { Container } from '@components/Cart/styles';
 import { ProductCart } from '@components/ProductCart';
 
 import { useCartOpen } from '@hooks/useCartOpen';
@@ -17,8 +18,6 @@ import CloseIconSVG from '@assets/close-icon.svg';
 import placeholder from '@assets/product-placeholder.png';
 
 import { formattedCurrency } from '@utils/formatCurrency';
-
-import { Container } from './styles';
 
 export const Cart = () => {
   const { setCartOpen } = useCartOpen();

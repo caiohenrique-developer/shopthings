@@ -10,12 +10,12 @@ import {
 } from '@store/actions/productCartManager';
 import { productCartManagerSelector } from '@store/selectors/productCartManager';
 
+import { Container } from '@components/ProductCart/styles';
+import { ProductCartProps } from '@components/ProductCart/types';
+
 import CloseIconSVG from '@assets/close-icon.svg';
 
 import { formattedCurrency } from '@utils/formatCurrency';
-
-import { Container } from './styles';
-import { ProductCartProps } from './types';
 
 export const ProductCart = ({
   productID,

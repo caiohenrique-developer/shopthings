@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, FC } from 'react';
 
-import { CartOpenCtxProps } from './types';
+import { CartOpenCtxProps } from '@hooks/types';
 
 const CartOpenContext = createContext({} as CartOpenCtxProps);
 

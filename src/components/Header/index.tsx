@@ -14,13 +14,12 @@ import { Sling as BurgerBtn } from 'hamburger-react';
 import { totalProductCartManagerSelector } from '@store/selectors/productCartManager';
 
 import { Cart } from '@components/Cart';
+import { Container } from '@components/Header/styles';
 import { ScrollPageProgressStatusBar } from '@components/ScrollPageProgressStatusBar';
 
 import { useCartOpen } from '@hooks/useCartOpen';
 
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
-
-import { Container } from './styles';
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);

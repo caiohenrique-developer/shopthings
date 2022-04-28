@@ -17,5 +17,7 @@ const persistentState = persistReducer(
   rootReducer,
 );
 
-export const store = createStore(persistentState, composeWithDevTools());
-export const persistentStore = persistStore(store);
+const store = createStore(persistentState, composeWithDevTools());
+const persistentStore = persistStore(store);
+
+export { store, persistentStore };

@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 import { productCartManager } from '@store/actions/productCartManager';
 
-import { formattedCurrency } from '@utils/formatCurrency';
+import { Container } from '@components/Product/styles';
+import { ProductProps } from '@components/Product/types';
 
-import { Container } from './styles';
-import { ProductProps } from './types';
+import { formattedCurrency } from '@utils/formatCurrency';
 
 export const Product = ({
   productID,

@@ -3,8 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { BackToTopBtn } from '@components/BackToTopBtn';
-
-import { Container } from './styles';
+import { Container } from '@components/Footer/styles';
 
 export const Footer = () => {
   const appCreatedAt = new Date(2021, 10, 1).getFullYear();

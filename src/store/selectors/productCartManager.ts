@@ -1,4 +1,4 @@
-import { SelectorStateProps } from './types';
+import { SelectorStateProps } from '@store/selectors/types';
 
 export const productCartManagerSelector = (state: SelectorStateProps) =>
   state.productCartManager;
