@@ -16,7 +16,7 @@
     "start": "next start",
     "cy": "cypress run",
     "cy:open": "cypress open",
-    "cy:open-ct": "cypress open-ct",
+    "cy:open-ct": "cypress open-ct --port 3001",
     "cy:run:chrome": "cypress run -b chrome",
     "cy:run:firefox": "cypress run -b firefox",
     "commit": "git-cz",
