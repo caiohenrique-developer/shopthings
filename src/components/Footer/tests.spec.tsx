@@ -19,7 +19,6 @@ describe("check the user's footer interactions handler", () => {
     );
 
     cy.get('a[data-tst=repository-link]')
-      .scrollIntoView()
       .should('be.visible')
       .should('have.attr', 'target', '_blank')
       .should(
