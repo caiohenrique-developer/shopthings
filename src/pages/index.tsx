@@ -12,8 +12,6 @@ import { Container } from '@styles/home';
 
 import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
-import bannerTop from '../../public/assets/home-banner-top.png';
-
 type FetchProductProps = {
   id: number;
   title: string;
@@ -56,7 +54,7 @@ export default function Home() {
         <MediaQuery minWidth={desktop.breakpoint.min}>
           <header>
             <Image
-              src={bannerTop}
+              src='/assets/home-banner-top.png'
               alt='Banner top from home page'
               width={800}
               height={534}
