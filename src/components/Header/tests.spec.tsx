@@ -42,14 +42,9 @@ describe("check the user's header elements interactions handler", () => {
     );
 
     cy.get('a[data-tst=go-to-home]')
-      .should('be.visible')
-      .should('have.attr', 'href', '/')
-      .and('not.have.attr', 'target');
-    // .click();
-
-    // check if the user is redirected to the home page
-    // cy.url().should('include', ':3000/');
-    // cy.location('pathname').should('include', '/Shopthings');
+      .should('exist')
+      .and('have.attr', 'href', '/')
+      .click();
   });
 
   context(`${tabletMaxWidth} x ${tabletMinWidth} viewport resolution`, () => {
