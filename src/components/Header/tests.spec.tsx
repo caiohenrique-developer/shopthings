@@ -46,8 +46,7 @@ describe("check the user's header elements interactions handler", () => {
     // find and click on the application logotipo element
     cy.get('a[data-tst=go-to-home]')
       .should('exist')
-      .and('have.attr', 'href', '/')
-      .click();
+      .and('have.attr', 'href', '/');
   });
 
   it('should not be able to click on my account & search disabled button', () => {
