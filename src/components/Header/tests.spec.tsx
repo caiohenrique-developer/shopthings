@@ -25,7 +25,7 @@ describe("check the user's header elements interactions handler", () => {
     },
   } = responsiveBreakpoint;
 
-  it('should be able to click on the application logotipo to go to home page', () => {
+  beforeEach(() => {
     // mount the component in the DOM
     mount(
       <>
@@ -40,7 +40,9 @@ describe("check the user's header elements interactions handler", () => {
         <GlobalStyles />
       </>,
     );
+  });
 
+  it('should be able to click on the application logotipo to go to home page', () => {
     // find and click on the application logotipo element
     cy.get('a[data-tst=go-to-home]')
       .should('exist')
@@ -50,11 +52,7 @@ describe("check the user's header elements interactions handler", () => {
 
   it('should not be able to click on my account & search disabled button', () => {
     // find disabled buttons
-    cy.get('button[data-tst=my-account-btn]')
-      .should('exist')
-      .and('be.disabled');
-
-    cy.get('button[data-tst=search-for-btn]')
+    cy.get('button[data-tst=my-account-btn], button[data-tst=search-for-btn]')
       .should('exist')
       .and('be.disabled');
   });
@@ -67,21 +65,6 @@ describe("check the user's header elements interactions handler", () => {
     });
 
     it('should be able to click on the open responsive navigation menu button to open the navigation menu', () => {
-      // mount the component in the DOM
-      mount(
-        <>
-          <Provider store={store}>
-            <PersistGate persistor={persistentStore}>
-              <CartOpenProvider>
-                <Header />
-              </CartOpenProvider>
-            </PersistGate>
-          </Provider>
-
-          <GlobalStyles />
-        </>,
-      );
-
       // check if the navigation menu is not visible
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
 
@@ -103,21 +86,6 @@ describe("check the user's header elements interactions handler", () => {
     });
 
     it('should be able to click on the close responsive navigation menu button to close the navigation menu', () => {
-      // mount the component in the DOM
-      mount(
-        <>
-          <Provider store={store}>
-            <PersistGate persistor={persistentStore}>
-              <CartOpenProvider>
-                <Header />
-              </CartOpenProvider>
-            </PersistGate>
-          </Provider>
-
-          <GlobalStyles />
-        </>,
-      );
-
       // check if the navigation menu is not visible
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
 
