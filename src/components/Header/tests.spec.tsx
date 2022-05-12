@@ -25,8 +25,8 @@ describe("check the user's header elements interactions handler", () => {
     },
   } = responsiveBreakpoint;
 
-  it.only('should be able to click on the application logotipo to go to home page', () => {
-    // find and click on the application logotipo element
+  it('should be able to click on the application logotipo to go to home page', () => {
+    // mount the component in the DOM
     mount(
       <>
         <Provider store={store}>
@@ -41,6 +41,7 @@ describe("check the user's header elements interactions handler", () => {
       </>,
     );
 
+    // find and click on the application logotipo element
     cy.get('a[data-tst=go-to-home]')
       .should('exist')
       .and('have.attr', 'href', '/')
@@ -54,12 +55,27 @@ describe("check the user's header elements interactions handler", () => {
     });
 
     it('should be able to click on the responsive navigation menu button to open the navigation menu', () => {
+      // mount the component in the DOM
+      mount(
+        <>
+          <Provider store={store}>
+            <PersistGate persistor={persistentStore}>
+              <CartOpenProvider>
+                <Header />
+              </CartOpenProvider>
+            </PersistGate>
+          </Provider>
+
+          <GlobalStyles />
+        </>,
+      );
+
       // check if the navigation menu is not visible
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
 
       // find and click on the responsive navigation menu button
       cy.get('button[data-tst=burger-btn]')
-        .should('be.visible')
+        .should('exist')
         .and('not.be.disabled')
         .click();
 
