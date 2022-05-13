@@ -16,11 +16,12 @@
  * @type {Cypress.PluginConfig}
  */
 
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-  require('@cypress/react/plugins/next')(on, config)
-  require('@cypress/code-coverage/task')(on, config)
+import injectDevServer from '@cypress/react/plugins/next'
+import codeCoverageReport from '@cypress/code-coverage/task'
+
+export default (on, config) => {
+  injectDevServer(on, config)
+  codeCoverageReport(on, config)
 
   return config
 }
