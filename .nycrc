@@ -1,0 +1,10 @@
+{
+  "all": true,
+  "excludeAfterRemap": true,
+  "include": [
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "**/*.spec.*"
+  ]
+}
