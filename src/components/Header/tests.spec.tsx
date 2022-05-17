@@ -56,6 +56,20 @@ describe("check the user's header elements interactions handler", () => {
       .and('be.disabled');
   });
 
+  it('should be able to click on the cart button to open the cart menu', () => {
+    // check if the cart menu is not visible
+    cy.get('section[data-tst=responsive-cart-menu]').should('not.exist');
+
+    // find and click on the cart element
+    cy.get('button[data-tst=cart-btn]')
+      .should('exist')
+      .and('not.be.disabled')
+      .click();
+
+    // check if the cart menu is visible
+    cy.get('section[data-tst=responsive-cart-menu]').should('be.visible');
+  });
+
   // responsive tests
   context(`${tabletMaxWidth} x ${tabletMinWidth} viewport resolution`, () => {
     beforeEach(() => {

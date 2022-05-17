@@ -170,6 +170,7 @@ export const Header = () => {
             >
               <button
                 type='button'
+                data-tst='cart-btn'
                 disabled={isMenuOpen}
                 onClick={() => setCartOpen(true)}
                 className={

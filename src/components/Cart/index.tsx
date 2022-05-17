@@ -28,7 +28,10 @@ export const Cart = () => {
   );
 
   return (
-    <Container className='animate__animated animate__fadeInDown'>
+    <Container
+      className='animate__animated animate__fadeInDown'
+      data-tst='responsive-cart-menu'
+    >
       <div>
         <header>
           <button type='button' onClick={() => setCartOpen(false)}>
