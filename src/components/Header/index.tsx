@@ -140,7 +140,11 @@ export const Header = () => {
           </MediaQuery>
 
           <div>
-            <button type='button' disabled={isCartOpen} data-tst='burger-btn'>
+            <button
+              type='button'
+              disabled={isCartOpen}
+              data-tst='open-burger-btn'
+            >
               <MediaQuery
                 minWidth={mobile.breakpoint.min}
                 maxWidth={tablet.breakpoint.max}
@@ -170,7 +174,7 @@ export const Header = () => {
             >
               <button
                 type='button'
-                data-tst='cart-btn'
+                data-tst='open-cart-btn'
                 disabled={isMenuOpen}
                 onClick={() => setCartOpen(true)}
                 className={

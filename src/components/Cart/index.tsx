@@ -34,7 +34,11 @@ export const Cart = () => {
     >
       <div>
         <header>
-          <button type='button' onClick={() => setCartOpen(false)}>
+          <button
+            type='button'
+            onClick={() => setCartOpen(false)}
+            data-tst='close-cart-btn'
+          >
             <CloseIconSVG />
           </button>
 

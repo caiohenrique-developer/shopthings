@@ -56,18 +56,41 @@ describe("check the user's header elements interactions handler", () => {
       .and('be.disabled');
   });
 
-  it('should be able to click on the cart button to open the cart menu', () => {
+  it('should be able to click on the open cart button to open the cart menu', () => {
     // check if the cart menu is not visible
     cy.get('section[data-tst=responsive-cart-menu]').should('not.exist');
 
-    // find and click on the cart element
-    cy.get('button[data-tst=cart-btn]')
+    // find and click on the open cart element
+    cy.get('button[data-tst=open-cart-btn]')
       .should('exist')
       .and('not.be.disabled')
       .click();
 
     // check if the cart menu is visible
     cy.get('section[data-tst=responsive-cart-menu]').should('be.visible');
+  });
+
+  it('should be able to click on the close cart button to close the cart menu', () => {
+    // check if the cart menu is not visible
+    cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
+
+    // find and click on the open cart element
+    cy.get('button[data-tst=open-cart-btn]')
+      .should('exist')
+      .and('not.be.disabled')
+      .click();
+
+    // check if the cart menu is visible
+    cy.get('section[data-tst=responsive-cart-menu]').should('be.visible');
+
+    // find and click on the close cart element
+    cy.get('button[data-tst=close-cart-btn]')
+      .should('exist')
+      .and('not.be.disabled')
+      .click();
+
+    // check if the cart menu is not visible
+    cy.get('nav[data-tst=responsive-cart-menu]').should('not.exist');
   });
 
   // responsive tests
@@ -82,7 +105,7 @@ describe("check the user's header elements interactions handler", () => {
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
 
       // find and click on the open responsive navigation menu button
-      cy.get('button[data-tst=burger-btn]')
+      cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
         .and('not.be.disabled')
         .click();
@@ -103,7 +126,7 @@ describe("check the user's header elements interactions handler", () => {
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
 
       // find and click on the open responsive navigation menu button
-      cy.get('button[data-tst=burger-btn]')
+      cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
         .and('not.be.disabled')
         .click();
@@ -119,7 +142,7 @@ describe("check the user's header elements interactions handler", () => {
         .and('have.length', 7);
 
       // find and click on the close responsive navigation menu button
-      cy.get('button[data-tst=burger-btn]')
+      cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
         .and('not.be.disabled')
         .click();
