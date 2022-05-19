@@ -104,7 +104,11 @@ export const Cart = () => {
             <></>
           )}
 
-          <button type='button' className={totalProductCart ? 'active' : ''}>
+          <button
+            type='button'
+            className={totalProductCart ? 'active' : ''}
+            data-tst='go-to-checkout-btn'
+          >
             {!totalProductCart ? 'Start shopping' : 'Go to checkout'}
           </button>
         </footer>

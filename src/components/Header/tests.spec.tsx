@@ -18,30 +18,30 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import 'animate.css';
 
-describe("check the user's header elements interactions handler", () => {
-  const {
-    tablet: {
-      breakpoint: { max: tabletMaxWidth, min: tabletMinWidth },
-    },
-  } = responsiveBreakpoint;
+const {
+  tablet: {
+    breakpoint: { max: tabletMaxWidth, min: tabletMinWidth },
+  },
+} = responsiveBreakpoint;
 
-  beforeEach(() => {
-    // mount the component in the DOM
-    mount(
-      <>
-        <Provider store={store}>
-          <PersistGate persistor={persistentStore}>
-            <CartOpenProvider>
-              <Header />
-            </CartOpenProvider>
-          </PersistGate>
-        </Provider>
+beforeEach(() => {
+  // mount the component in the DOM
+  mount(
+    <>
+      <Provider store={store}>
+        <PersistGate persistor={persistentStore}>
+          <CartOpenProvider>
+            <Header />
+          </CartOpenProvider>
+        </PersistGate>
+      </Provider>
 
-        <GlobalStyles />
-      </>,
-    );
-  });
+      <GlobalStyles />
+    </>,
+  );
+});
 
+describe('header - general elements', () => {
   it('should be able to click on the application logotipo to go to home page', () => {
     // find and click on the application logotipo element
     cy.get('a[data-tst=go-to-home]')
@@ -63,7 +63,7 @@ describe("check the user's header elements interactions handler", () => {
     // find and click on the open cart element
     cy.get('button[data-tst=open-cart-btn]')
       .should('exist')
-      .and('not.be.disabled')
+      .and('be.enabled')
       .click();
 
     // check if the cart menu is visible
@@ -77,7 +77,7 @@ describe("check the user's header elements interactions handler", () => {
     // find and click on the open cart element
     cy.get('button[data-tst=open-cart-btn]')
       .should('exist')
-      .and('not.be.disabled')
+      .and('be.enabled')
       .click();
 
     // check if the cart menu is visible
@@ -86,7 +86,7 @@ describe("check the user's header elements interactions handler", () => {
     // find and click on the close cart element
     cy.get('button[data-tst=close-cart-btn]')
       .should('exist')
-      .and('not.be.disabled')
+      .and('be.enabled')
       .click();
 
     // check if the cart menu is not visible
@@ -107,7 +107,7 @@ describe("check the user's header elements interactions handler", () => {
       // find and click on the open responsive navigation menu button
       cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
-        .and('not.be.disabled')
+        .and('be.enabled')
         .click();
 
       // check if the navigation menu is visible
@@ -128,7 +128,7 @@ describe("check the user's header elements interactions handler", () => {
       // find and click on the open responsive navigation menu button
       cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
-        .and('not.be.disabled')
+        .and('be.enabled')
         .click();
 
       // check if the navigation menu is visible
@@ -144,12 +144,36 @@ describe("check the user's header elements interactions handler", () => {
       // find and click on the close responsive navigation menu button
       cy.get('button[data-tst=open-burger-btn]')
         .should('exist')
-        .and('not.be.disabled')
+        .and('be.enabled')
         .click();
 
       // check if the navigation menu is not visible
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
     });
+  });
+});
+
+describe('header - cart menu', () => {
+  it('should not be able to submit the cart menu data to checkout page', () => {
+    // check if the cart menu is not visible
+    cy.get('section[data-tst=responsive-cart-menu]').should('not.exist');
+
+    // find and click on the open cart element
+    cy.get('button[data-tst=open-cart-btn]')
+      .should('exist')
+      .and('be.enabled')
+      .click();
+
+    // check if the cart menu is visible
+    cy.get('section[data-tst=responsive-cart-menu]')
+      .should('be.visible')
+      .find('button[data-tst=go-to-checkout-btn]')
+      .should('be.visible')
+      .and('be.enabled')
+      .click();
+
+    // the checkout page must not exist
+    cy.get('section[data-tst=checkout]').should('not.exist');
   });
 });
 
