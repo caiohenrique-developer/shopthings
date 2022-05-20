@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistentStore } from '@store/index';
 
+import { Cart } from '@components/Cart';
 import { Header } from '@components/Header';
 
 import { CartOpenProvider } from '@hooks/useCartOpen';
@@ -18,30 +19,30 @@ import { responsiveBreakpoint } from '@utils/responsiveBreakpoint';
 
 import 'animate.css';
 
-const {
-  tablet: {
-    breakpoint: { max: tabletMaxWidth, min: tabletMinWidth },
-  },
-} = responsiveBreakpoint;
-
-beforeEach(() => {
-  // mount the component in the DOM
-  mount(
-    <>
-      <Provider store={store}>
-        <PersistGate persistor={persistentStore}>
-          <CartOpenProvider>
-            <Header />
-          </CartOpenProvider>
-        </PersistGate>
-      </Provider>
-
-      <GlobalStyles />
-    </>,
-  );
-});
-
 describe('header - general elements', () => {
+  const {
+    tablet: {
+      breakpoint: { max: tabletMaxWidth, min: tabletMinWidth },
+    },
+  } = responsiveBreakpoint;
+
+  beforeEach(() => {
+    // mount the component in the DOM
+    mount(
+      <>
+        <Provider store={store}>
+          <PersistGate persistor={persistentStore}>
+            <CartOpenProvider>
+              <Header />
+            </CartOpenProvider>
+          </PersistGate>
+        </Provider>
+
+        <GlobalStyles />
+      </>,
+    );
+  });
+
   it('should be able to click on the application logotipo to go to home page', () => {
     // find and click on the application logotipo element
     cy.get('a[data-tst=go-to-home]')
@@ -81,10 +82,9 @@ describe('header - general elements', () => {
       .click();
 
     // check if the cart menu is visible
-    cy.get('section[data-tst=responsive-cart-menu]').should('be.visible');
-
-    // find and click on the close cart element
-    cy.get('button[data-tst=close-cart-btn]')
+    cy.get('section[data-tst=responsive-cart-menu]')
+      .should('be.visible')
+      .find('button[data-tst=close-cart-btn]')
       .should('exist')
       .and('be.enabled')
       .click();
@@ -154,16 +154,24 @@ describe('header - general elements', () => {
 });
 
 describe('header - cart menu', () => {
+  beforeEach(() => {
+    // mount the component in the DOM
+    mount(
+      <>
+        <Provider store={store}>
+          <PersistGate persistor={persistentStore}>
+            <CartOpenProvider>
+              <Cart />
+            </CartOpenProvider>
+          </PersistGate>
+        </Provider>
+
+        <GlobalStyles />
+      </>,
+    );
+  });
+
   it('should not be able to submit the cart menu data to checkout page', () => {
-    // check if the cart menu is not visible
-    cy.get('section[data-tst=responsive-cart-menu]').should('not.exist');
-
-    // find and click on the open cart element
-    cy.get('button[data-tst=open-cart-btn]')
-      .should('exist')
-      .and('be.enabled')
-      .click();
-
     // check if the cart menu is visible
     cy.get('section[data-tst=responsive-cart-menu]')
       .should('be.visible')
