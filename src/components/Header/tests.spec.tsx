@@ -8,7 +8,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistentStore } from '@store/index';
 
-import { Cart } from '@components/Cart';
 import { Header } from '@components/Header';
 
 import { CartOpenProvider } from '@hooks/useCartOpen';
@@ -71,28 +70,6 @@ describe('header - general elements', () => {
     cy.get('section[data-tst=responsive-cart-menu]').should('be.visible');
   });
 
-  it('should be able to click on the close cart button to close the cart menu', () => {
-    // check if the cart menu is not visible
-    cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
-
-    // find and click on the open cart element
-    cy.get('button[data-tst=open-cart-btn]')
-      .should('exist')
-      .and('be.enabled')
-      .click();
-
-    // check if the cart menu is visible
-    cy.get('section[data-tst=responsive-cart-menu]')
-      .should('be.visible')
-      .find('button[data-tst=close-cart-btn]')
-      .should('exist')
-      .and('be.enabled')
-      .click();
-
-    // check if the cart menu is not visible
-    cy.get('nav[data-tst=responsive-cart-menu]').should('not.exist');
-  });
-
   // responsive tests
   context(`${tabletMaxWidth} x ${tabletMinWidth} viewport resolution`, () => {
     beforeEach(() => {
@@ -150,38 +127,6 @@ describe('header - general elements', () => {
       // check if the navigation menu is not visible
       cy.get('nav[data-tst=responsive-navigation-menu]').should('not.exist');
     });
-  });
-});
-
-describe('header - cart menu', () => {
-  beforeEach(() => {
-    // mount the component in the DOM
-    mount(
-      <>
-        <Provider store={store}>
-          <PersistGate persistor={persistentStore}>
-            <CartOpenProvider>
-              <Cart />
-            </CartOpenProvider>
-          </PersistGate>
-        </Provider>
-
-        <GlobalStyles />
-      </>,
-    );
-  });
-
-  it('should not be able to submit the cart menu data to checkout page', () => {
-    // check if the cart menu is visible
-    cy.get('section[data-tst=responsive-cart-menu]')
-      .should('be.visible')
-      .find('button[data-tst=go-to-checkout-btn]')
-      .should('be.visible')
-      .and('be.enabled')
-      .click();
-
-    // the checkout page must not exist
-    cy.get('section[data-tst=checkout]').should('not.exist');
   });
 });
 
