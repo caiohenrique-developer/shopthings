@@ -50,6 +50,7 @@ export const Product = ({
         <p>{description}</p>
         <button
           type='button'
+          data-tst='add-to-cart-btn'
           onClick={() => dispatch(productCartManager(addProduct))}
         >
           Buy now
