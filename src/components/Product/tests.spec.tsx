@@ -18,28 +18,32 @@ import 'animate.css';
 
 describe('product elements', () => {
   beforeEach(() => {
-    // mount the component in the DOM
-    mount(
-      <>
-        <Provider store={store}>
-          <PersistGate persistor={persistentStore}>
-            <CartOpenProvider>
-              <Product
-                key={8}
-                productID={8}
-                name='Pierced Owl Rose Gold Plated Stainless Steel Double'
-                image='https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg'
-                price={55}
-                stock={56}
-                category='jewelery'
-                description='Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel'
-              />
-            </CartOpenProvider>
-          </PersistGate>
-        </Provider>
+    cy.fixture('products').then(
+      ({ id, title, price, image, rating, category, description }) => {
+        // mount the component in the DOM
+        mount(
+          <>
+            <Provider store={store}>
+              <PersistGate persistor={persistentStore}>
+                <CartOpenProvider>
+                  <Product
+                    key={id}
+                    productID={id}
+                    name={title}
+                    image={image}
+                    price={price}
+                    stock={rating.count}
+                    category={category}
+                    description={description}
+                  />
+                </CartOpenProvider>
+              </PersistGate>
+            </Provider>
 
-        <GlobalStyles />
-      </>,
+            <GlobalStyles />
+          </>,
+        );
+      },
     );
   });
 
