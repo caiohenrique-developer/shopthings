@@ -22,6 +22,7 @@
     "react",
     "prettier",
     "react-hooks",
+    "unused-imports",
     "@typescript-eslint",
     "eslint-plugin-import-helpers"
   ],
@@ -48,16 +49,30 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     // ESlint mostra erro caso as regras do Prettier forem violadas
     "prettier/prettier": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "jsx-a11y/anchor-is-valid": [ "off", {
-      "components": [ "Link" ],
-      "specialLink": ["hrefLeft", "hrefRight"],
-      "aspects": ["invalidHref", "preferButton"]
-    }],
+    "jsx-a11y/anchor-is-valid": [
+      "off",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off",
