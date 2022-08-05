@@ -58,6 +58,10 @@
   - Grand total price
   - Remove target product
 
+  ###### App testing
+
+- [x] Unit test with Cypress
+
 - **_Any suggestion?_** <a href="#phone">Contact me!</a>
 
 #### <a name="flying_saucer"></a> <br>
@@ -73,52 +77,52 @@
 
   <tr align="center">
     <td><a href="https://axios-http.com/">Axios</a></td>
-    <td><a href="https://github.com/conventional-changelog/commitlint">Commitlint</a></td>
+    <td><a href="https://www.cypress.io/">Cypress</a></td>
     <td><a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=pt-BR">Redux DevTools Debugger</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://animate.style/">Animate.css</a></td>
-    <td><a href="https://github.com/commitizen/cz-cli">Commitizen</a></td>
+    <td><a href="https://github.com/conventional-changelog/commitlint">Commitlint</a></td>
     <td><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/luukdv/hamburger-react">Hamburger-react</a></td>
-    <td><a href="https://github.com/leoforfree/cz-customizable">CZ-customizable</a></td>
+    <td><a href="https://github.com/commitizen/cz-cli">Commitizen</a></td>
     <td><a href="https://code.visualstudio.com/docs/editor/debugging">VS Code Debugger</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/immerjs/immer">Immer</a></td>
-    <td><a href="https://eslint.org/">ESLint</a></td>
+    <td><a href="https://github.com/leoforfree/cz-customizable">CZ-customizable</a></td>
     <td><a href="https://vercel.com/">Vercel</a></td>
   </tr>
   <tr align="center">
     <td><a href="https://github.com/mifi/react-lottie-player">LottieFiles</a></td>
-    <td><a href="https://github.com/Tibfib/eslint-plugin-import-helpers">ESlint-plugin-import-helpers</a></td>
+    <td><a href="https://eslint.org/">ESLint</a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
     <td><a href="https://mui.com/pt/">Material UI</a></td>
-    <td><a href="https://github.com/typicode/husky">Husky</a></td>
+    <td><a href="https://github.com/Tibfib/eslint-plugin-import-helpers">ESlint-plugin-import-helpers</a></td>
     <td><a href="#"></a></td>
   </tr>
     <tr align="center">
     <td><a href="https://vercel.com/solutions/nextjs">Next.js</a></td>
-    <td><a href="https://prettier.io/">Prettier</a></td>
+    <td><a href="https://github.com/typicode/husky">Husky</a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
     <td><a href="https://polished.js.org/">Polished</a></td>
-    <td><a href="https://react-svgr.com/">SVGR</a></td>
+    <td><a href="https://prettier.io/">Prettier</a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
     <td><a href="https://pt-br.reactjs.org/">React</a></td>
-    <td><a href="https://www.typescriptlang.org/">TypeScript</a></td>
+    <td><a href="https://react-svgr.com/">SVGR</a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
     <td><a href="https://redux.js.org/">Redux</a></td>
-    <td><a href="#"></a></td>
+    <td><a href="https://www.typescriptlang.org/">TypeScript</a></td>
     <td><a href="#"></a></td>
   </tr>
   <tr align="center">
