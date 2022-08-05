@@ -32,6 +32,7 @@
     }
   },
   "dependencies": {
+    "@cypress/react": "^6.0.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@lottiefiles/react-lottie-player": "^3.4.1",
@@ -39,6 +40,7 @@
     "@mui/material": "^5.0.4",
     "animate.css": "^4.1.1",
     "axios": "^0.23.0",
+    "cypress": "^10.4.0",
     "hamburger-react": "^2.4.1",
     "immer": "^9.0.6",
     "next": "11.1.2",
@@ -57,7 +59,6 @@
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "@cypress/code-coverage": "^3.9.12",
-    "@cypress/react": "^6.0.0",
     "@cypress/webpack-dev-server": "^1.8.4",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "^17.0.30",
@@ -66,7 +67,6 @@
     "@typescript-eslint/parser": "^5.0.0",
     "babel-plugin-istanbul": "^6.1.1",
     "commitizen": "^4.2.4",
-    "cypress": "^10.4.0",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
